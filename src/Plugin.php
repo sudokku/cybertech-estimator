@@ -13,6 +13,7 @@ declare(strict_types=1);
 namespace Cybertech\Estimator;
 
 use Cybertech\Estimator\Lead\LeadPostType;
+use Cybertech\Estimator\Rest\SandboxController;
 
 /**
  * Plugin container.
@@ -55,6 +56,10 @@ final class Plugin {
 		add_action( 'init', [ $this, 'load_textdomain' ], 1 );
 
 		foreach ( $this->module_classes() as $class ) {
+			if ( ! class_exists( $class ) ) {
+				continue;
+				// Module not shipped yet (phased build) — skip silently.
+			}
 			$module = new $class();
 			$module->register();
 			$this->modules[ $class ] = $module;
@@ -69,6 +74,10 @@ final class Plugin {
 	private function module_classes(): array {
 		return [
 			LeadPostType::class,
+			SandboxController::class,
+			// Admin pages (each registers its own submenu under the Estimator menu).
+			'Cybertech\\Estimator\\Admin\\RateCardPage',
+			'Cybertech\\Estimator\\Admin\\SandboxPage',
 		];
 	}
 
