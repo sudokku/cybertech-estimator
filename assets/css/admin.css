@@ -1,0 +1,560 @@
+/**
+ * Cybertech Project Estimator — admin styles (Rate card, Sandbox).
+ * Sits on top of the WP admin skin: only layout, tokens and the few
+ * components WP does not ship (stat tiles, effect cells, diffs).
+ */
+
+.ct-rc {
+	--ct-primary: #1c67fa;
+	--ct-primary-dark: #1450c8;
+	--ct-primary-soft: rgba(28, 103, 250, 0.1);
+	--ct-primary-ring: rgba(28, 103, 250, 0.35);
+	--ct-ink: #1f1f25;
+	--ct-body: #717173;
+	--ct-border: #e9e9e9;
+	--ct-surface: #f8f8f8;
+	--ct-bg: #fff;
+	--ct-ok: #1a7f37;
+	--ct-ok-soft: rgba(26, 127, 55, 0.1);
+	--ct-bad: #c2281a;
+	--ct-bad-soft: rgba(194, 40, 26, 0.1);
+	--ct-warn: #9a6700;
+	--ct-radius: 5px;
+	--ct-gap: 16px;
+	--ct-side-width: 320px;
+}
+
+/* ---------- header ---------- */
+
+.ct-rc .ct-rc-version {
+	display: inline-block;
+	margin-left: 8px;
+	padding: 2px 10px;
+	border-radius: 999px;
+	background: var(--ct-primary);
+	color: #fff;
+	font-weight: 600;
+	font-size: 13px;
+	vertical-align: middle;
+}
+
+.ct-rc .ct-rc-badge {
+	display: inline-block;
+	margin-left: 8px;
+	padding: 2px 10px;
+	border-radius: 999px;
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+.ct-rc .ct-rc-badge--draft {
+	background: var(--ct-bad-soft);
+	color: var(--ct-bad);
+}
+
+.ct-rc .ct-rc-errors {
+	margin: 0 0 8px 20px;
+	list-style: disc;
+}
+
+/* ---------- layout ---------- */
+
+.ct-rc-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) var(--ct-side-width);
+	gap: 24px;
+	align-items: start;
+	margin-top: var(--ct-gap);
+}
+
+.ct-rc-side {
+	position: sticky;
+	top: 46px;
+	display: grid;
+	gap: var(--ct-gap);
+	max-height: calc(100vh - 62px);
+	overflow-y: auto;
+}
+
+@media (max-width: 1100px) {
+	.ct-rc-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.ct-rc-side {
+		position: static;
+		max-height: none;
+	}
+}
+
+.ct-rc-card,
+.ct-rc-section {
+	background: var(--ct-bg);
+	border: 1px solid var(--ct-border);
+	border-radius: var(--ct-radius);
+	padding: var(--ct-gap) 20px;
+}
+
+.ct-rc-section {
+	margin-bottom: var(--ct-gap);
+	scroll-margin-top: 46px;
+	overflow-x: auto; /* safety net for narrow admin viewports; the tables are sized to fit at ≥1280px */
+}
+
+.ct-rc-section > h2,
+.ct-rc-card > h2 {
+	margin: 0 0 4px;
+	font-size: 16px;
+	color: var(--ct-ink);
+}
+
+.ct-rc-section > .description {
+	margin: 0 0 12px;
+	max-width: 80ch;
+}
+
+.ct-rc-subhead {
+	margin: 16px 0 6px;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--ct-body);
+}
+
+.ct-rc-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: var(--ct-gap);
+}
+
+/* ---------- stats ---------- */
+
+.ct-rc-stats {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 12px;
+	margin-bottom: var(--ct-gap);
+}
+
+@media (max-width: 1400px) {
+	.ct-rc-stats {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.ct-rc-stat {
+	background: var(--ct-bg);
+	border: 1px solid var(--ct-border);
+	border-left: 3px solid var(--ct-border);
+	border-radius: var(--ct-radius);
+	padding: 12px 14px;
+	transition: opacity 0.15s;
+}
+
+.ct-rc-stat--primary {
+	border-left-color: var(--ct-primary);
+	background: linear-gradient(180deg, var(--ct-primary-soft), transparent 60%);
+}
+
+.ct-rc-stat__title {
+	margin: 0 0 6px;
+	font-size: 13px;
+	color: var(--ct-ink);
+}
+
+.ct-rc-stat__title small {
+	display: block;
+	font-weight: 400;
+	color: var(--ct-body);
+}
+
+.ct-rc-stat__range {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--ct-ink);
+	font-variant-numeric: tabular-nums;
+}
+
+.ct-rc-stat__meta {
+	margin: 2px 0 6px;
+	color: var(--ct-body);
+	font-variant-numeric: tabular-nums;
+}
+
+.ct-rc-stat__meta span + span::before {
+	content: " · ";
+}
+
+.ct-rc-stat__answers {
+	margin: 0;
+	font-size: 11px;
+	line-height: 1.4;
+	color: var(--ct-body);
+}
+
+.ct-rc-live {
+	grid-column: 1 / -1;
+	margin: 0;
+	min-height: 1.4em;
+	font-size: 12px;
+	color: var(--ct-body);
+}
+
+.ct-rc-live.is-busy::before {
+	content: "";
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 6px;
+	border: 2px solid var(--ct-primary-soft);
+	border-top-color: var(--ct-primary);
+	border-radius: 50%;
+	animation: ct-rc-spin 0.8s linear infinite;
+	vertical-align: -1px;
+}
+
+.ct-rc-live.is-ok {
+	color: var(--ct-ok);
+}
+
+.ct-rc-live.is-error {
+	color: var(--ct-bad);
+	font-weight: 600;
+}
+
+@keyframes ct-rc-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* ---------- tables + inputs ---------- */
+
+.ct-rc-table {
+	border-radius: var(--ct-radius);
+}
+
+.ct-rc-table th,
+.ct-rc-table td {
+	vertical-align: middle;
+}
+
+.ct-rc-table thead th {
+	font-weight: 600;
+	color: var(--ct-ink);
+}
+
+.ct-rc-table code {
+	font-size: 11px;
+	background: var(--ct-surface);
+}
+
+.ct-rc-center {
+	text-align: center;
+}
+
+.ct-rc .ct-rc-input[type="number"] {
+	width: 7em;
+	font-variant-numeric: tabular-nums;
+}
+
+.ct-rc .ct-rc-input--short[type="number"] {
+	width: 4.5em;
+}
+
+.ct-rc-factors .ct-rc-input[type="number"] {
+	width: 5.5em;
+}
+
+.ct-rc .ct-rc-input--code {
+	width: 5em;
+	text-transform: uppercase;
+	font-family: Consolas, Monaco, monospace;
+}
+
+.ct-rc .ct-rc-inline {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 6px 10px;
+	align-items: center;
+}
+
+.ct-rc .ct-rc-inline label {
+	color: var(--ct-body);
+}
+
+.ct-rc .ct-rc-check {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	margin-right: 8px;
+	white-space: nowrap;
+}
+
+.ct-rc .ct-rc-check input {
+	margin: 0;
+}
+
+.ct-rc .ct-rc-applies {
+	min-width: 120px;
+}
+
+.ct-rc .ct-rc-applies .ct-rc-check {
+	width: 46%;
+	margin-right: 0;
+}
+
+.ct-rc .ct-rc-form input:focus,
+.ct-rc .ct-rc-form select:focus {
+	border-color: var(--ct-primary);
+	box-shadow: 0 0 0 1px var(--ct-primary);
+}
+
+/* ---------- factors ---------- */
+
+.ct-rc-factors .ct-rc-col-factor {
+	min-width: 220px;
+}
+
+.ct-rc-factors .ct-rc-col-effect {
+	min-width: 190px;
+}
+
+.ct-rc-factors .ct-rc-input--label {
+	width: 100%;
+	max-width: 280px;
+	font-weight: 600;
+}
+
+.ct-rc-factors .ct-rc-input--note {
+	display: block;
+	width: 100%;
+	max-width: 280px;
+	margin-top: 4px;
+	font-size: 12px;
+	color: var(--ct-body);
+}
+
+.ct-rc-factors .ct-rc-id {
+	display: inline-block;
+	margin: 4px 0 0;
+}
+
+.ct-rc-group__head th {
+	background: var(--ct-surface);
+	color: var(--ct-ink);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	font-size: 11px;
+}
+
+.ct-rc-group tr:nth-child(even) td {
+	background: rgba(0, 0, 0, 0.015);
+}
+
+.ct-rc-effect {
+	font-variant-numeric: tabular-nums;
+	transition: opacity 0.15s;
+}
+
+.ct-rc-effect__range {
+	display: block;
+	font-weight: 600;
+	color: var(--ct-ink);
+}
+
+.ct-rc-effect__meta {
+	display: block;
+	font-size: 12px;
+	color: var(--ct-body);
+}
+
+.ct-rc-delta {
+	font-style: normal;
+	font-weight: 600;
+	padding: 0 5px;
+	border-radius: 999px;
+}
+
+.ct-rc-delta--up {
+	color: var(--ct-primary-dark);
+	background: var(--ct-primary-soft);
+}
+
+.ct-rc-delta--down {
+	color: var(--ct-ok);
+	background: var(--ct-ok-soft);
+}
+
+.ct-rc-delta--zero {
+	color: var(--ct-body);
+	background: var(--ct-surface);
+}
+
+.ct-rc-effect.is-stale,
+.ct-rc-stat.is-stale {
+	opacity: 0.45;
+}
+
+/* ---------- team bands ---------- */
+
+.ct-rc-bands th abbr {
+	text-decoration: none;
+	border-bottom: 1px dotted var(--ct-body);
+	cursor: help;
+}
+
+.ct-rc-sum {
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+.ct-rc-sum::after {
+	content: " / 100";
+	font-weight: 400;
+	color: var(--ct-body);
+}
+
+.ct-rc-sum.is-ok {
+	color: var(--ct-ok);
+}
+
+.ct-rc-sum.is-bad {
+	color: var(--ct-bad);
+}
+
+.ct-rc-sum.is-bad::before {
+	content: "Σ ≠ 100 — ";
+	font-weight: 400;
+}
+
+/* ---------- deep-link highlight (Sandbox → #rc-<path>) ---------- */
+
+.ct-rc :target {
+	outline: 2px solid var(--ct-primary);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 5px var(--ct-primary-ring);
+	scroll-margin-top: 80px;
+}
+
+.ct-rc tr:has(:target) > td,
+.ct-rc tr:has(:target) > th {
+	background: var(--ct-primary-soft) !important;
+}
+
+.ct-rc-section:target {
+	outline: none;
+	box-shadow: none;
+	border-color: var(--ct-primary);
+}
+
+/* ---------- sidebar ---------- */
+
+.ct-rc-side .ct-rc-save {
+	width: 100%;
+	text-align: center;
+}
+
+.ct-rc-side .ct-rc-card p {
+	margin: 0 0 10px;
+}
+
+.ct-rc-side .ct-rc-label {
+	display: block;
+	margin: 12px 0 4px;
+	font-weight: 600;
+}
+
+.ct-rc-import input[type="file"] {
+	display: block;
+	max-width: 100%;
+	margin-bottom: 6px;
+	font-size: 12px;
+}
+
+.ct-rc-reset {
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid var(--ct-border);
+}
+
+.ct-rc-nav ul {
+	margin: 0;
+	columns: 2;
+}
+
+.ct-rc-nav li {
+	margin: 0 0 4px;
+	break-inside: avoid;
+}
+
+.ct-rc-history__list {
+	margin: 0;
+	list-style: none;
+}
+
+.ct-rc-history__item {
+	padding: 8px 0;
+	border-top: 1px solid var(--ct-border);
+}
+
+.ct-rc-history__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 10px;
+	font-size: 12px;
+	color: var(--ct-body);
+}
+
+.ct-rc-history__meta strong {
+	color: var(--ct-ink);
+}
+
+.ct-rc-history__actions {
+	display: flex;
+	gap: 6px;
+	margin-top: 6px;
+}
+
+.ct-rc-history__actions form {
+	display: inline;
+}
+
+.ct-rc-diff {
+	margin-top: 8px;
+	padding: 8px 10px;
+	background: var(--ct-surface);
+	border-radius: var(--ct-radius);
+	font-size: 12px;
+	max-height: 320px;
+	overflow: auto;
+}
+
+.ct-rc-diff ul {
+	margin: 0;
+}
+
+.ct-rc-diff li {
+	margin: 0 0 4px;
+	word-break: break-word;
+}
+
+.ct-rc-diff code {
+	font-size: 11px;
+	background: transparent;
+	padding: 0;
+}
+
+.ct-rc-diff del {
+	color: var(--ct-bad);
+	text-decoration: line-through;
+}
+
+.ct-rc-diff ins {
+	color: var(--ct-ok);
+	text-decoration: none;
+	font-weight: 600;
+}

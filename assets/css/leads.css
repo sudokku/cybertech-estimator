@@ -1,0 +1,112 @@
+/*
+ * Leads admin: list table + edit screen.
+ * Colours lean on WP admin variables where they exist so the pills sit
+ * naturally next to core UI in both default and high-contrast schemes.
+ */
+
+/* ---- Pills (score / AI / share state) --------------------------------- */
+.ct-pill {
+	display: inline-block;
+	padding: 2px 9px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.6;
+	white-space: nowrap;
+	text-decoration: none;
+	border: 1px solid transparent;
+}
+.ct-pill--green { background: #edfaef; color: #00450c; border-color: #b8e6bf; }
+.ct-pill--amber { background: #fcf9e8; color: #674e00; border-color: #f0e2a2; }
+.ct-pill--red   { background: #fcf0f1; color: #8a2424; border-color: #f1bcbf; }
+.ct-pill--grey  { background: #f0f0f1; color: #3c434a; border-color: #dcdcde; }
+a.ct-pill:hover,
+a.ct-pill:focus { text-decoration: underline; }
+
+.ct-lead-muted { color: #646970; }
+
+/* ---- List table -------------------------------------------------------- */
+.post-type-ct_estimate_lead .page-title-action { display: none; } /* CPT forbids create */
+.post-type-ct_estimate_lead .column-ct_score,
+.post-type-ct_estimate_lead .column-ct_weeks,
+.post-type-ct_estimate_lead .column-ct_ai { width: 6.5em; }
+.post-type-ct_estimate_lead .column-ct_status { width: 12em; }
+.post-type-ct_estimate_lead .column-ct_share { width: 10em; }
+.post-type-ct_estimate_lead .column-ct_estimate { min-width: 9em; }
+
+.ct-lead-contact { display: flex; flex-direction: column; gap: 1px; line-height: 1.4; }
+
+.ct-lead-status { display: inline-flex; align-items: center; gap: 6px; }
+.ct-lead-status__select { max-width: 9.5em; }
+.ct-lead-status__state { font-size: 12px; min-width: 1.2em; }
+.ct-lead-status__state.is-ok { color: #007017; }
+.ct-lead-status__state.is-error { color: #b32d2e; }
+.ct-lead-status__state.is-busy { color: #646970; }
+
+.ct-lead-share { display: inline-flex; align-items: center; gap: 6px; }
+.ct-lead-share__open { display: inline-flex; color: #2271b1; text-decoration: none; }
+.ct-lead-share__open .dashicons { font-size: 18px; width: 18px; height: 18px; }
+.ct-lead-share__note { font-size: 12px; color: #646970; }
+.ct-lead-share--expired .ct-lead-share__note { color: #674e00; }
+
+.ct-copy.is-copied { border-color: #00a32a; color: #00450c; }
+
+/* ---- Edit screen ------------------------------------------------------- */
+/* Read-only snapshot: drop the publish-box controls that would suggest a draft/schedule workflow. */
+.post-type-ct_estimate_lead #minor-publishing-actions,
+.post-type-ct_estimate_lead .misc-pub-post-status,
+.post-type-ct_estimate_lead .misc-pub-visibility,
+.post-type-ct_estimate_lead #post-preview,
+.post-type-ct_estimate_lead .edit-timestamp { display: none; }
+.post-type-ct_estimate_lead #title[readonly] { background: #f6f7f7; color: #1d2327; cursor: default; }
+
+.ct-lead-badges { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 12px; }
+
+.ct-lead-figures {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 10px 16px;
+	margin: 0 0 16px;
+}
+.ct-lead-figures > div { display: contents; }
+.ct-lead-figures dt { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #646970; margin: 0; }
+.ct-lead-figures dd { margin: 0 0 8px; font-size: 14px; }
+.ct-lead-figures > div { display: block; }
+.ct-lead-figures__big { font-size: 18px; font-weight: 600; }
+
+.ct-lead-cols { display: grid; grid-template-columns: 1fr 1.5fr; gap: 16px; }
+@media (max-width: 900px) { .ct-lead-cols { grid-template-columns: 1fr; } }
+.ct-lead-cols h4 { margin: 0 0 6px; }
+
+.ct-lead-table th.is-num,
+.ct-lead-table td.is-num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ct-lead-table--compact td,
+.ct-lead-table--compact th { padding: 4px 8px; }
+.ct-lead-table__total td { font-weight: 600; border-top: 1px solid #c3c4c7; }
+.ct-lead-table code { font-size: 12px; }
+.ct-lead-scroll { overflow-x: auto; }
+.ct-lead-code { display: inline-block; max-width: 28em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; }
+
+.ct-lead-kv { width: 100%; border-collapse: collapse; }
+.ct-lead-kv th { text-align: left; vertical-align: top; width: 38%; padding: 4px 6px 4px 0; color: #646970; font-weight: 500; }
+.ct-lead-kv td { padding: 4px 0; word-break: break-word; }
+
+.ct-lead-share-url input { font-size: 12px; }
+.ct-lead-share-state { margin-top: 0; }
+
+.ct-lead-narrative h4 { margin: 12px 0 4px; }
+.ct-lead-narrative ul { list-style: disc; margin-left: 1.3em; }
+
+.ct-lead-details summary { cursor: pointer; font-weight: 600; padding: 6px 0; }
+.ct-lead-json {
+	max-height: 420px;
+	overflow: auto;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	padding: 10px;
+	font-size: 12px;
+	line-height: 1.45;
+}
+
+.ct-lead-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ct-lead-actions .description { color: #646970; }
