@@ -191,8 +191,12 @@ final class NarrativeService {
 		if ( ! $result || ! $card ) {
 			return null;
 		}
-		$labels                     = get_post_meta( $lead_id, LeadRepository::META_LABELS, true );
-		$facts                      = self::facts( $result, $card, is_array( $labels ) ? $labels : [], (string) get_post_meta( $lead_id, LeadRepository::META_LOCALE, true ) ?: get_locale() );
+		$labels = get_post_meta( $lead_id, LeadRepository::META_LABELS, true );
+		$locale = (string) get_post_meta( $lead_id, LeadRepository::META_LOCALE, true );
+		if ( '' === $locale ) {
+			$locale = get_locale();
+		}
+		$facts                      = self::facts( $result, $card, is_array( $labels ) ? $labels : [], $locale );
 		$facts['rate_card_version'] = $card->version();
 		$run                        = $this->run( $facts );
 

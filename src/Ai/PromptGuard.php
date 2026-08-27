@@ -27,7 +27,7 @@ final class PromptGuard {
 	 */
 	public static function patterns(): array {
 		return [
-			'role_marker'      => '/^\s*(system|assistant|user|developer)\s*:/mi',
+			'role_marker'      => '/(^|[\s.;,!?()\[\]])(system|assistant|user|developer)\s*:/mi',
 			'special_token'    => '/<\|[^|>]{1,40}\|>/',
 			'ignore_previous'  => '/\b(ignore|disregard|forget)\b[^.\n]{0,40}\b(previous|prior|above|earlier|all)\b[^.\n]{0,40}\b(instructions?|prompts?|rules?)\b/i',
 			'new_instructions' => '/\b(new|updated|real)\s+(instructions?|system\s+prompt)\b\s*:/i',
