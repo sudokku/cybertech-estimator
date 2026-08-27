@@ -98,11 +98,12 @@ final class AdminAiController {
 		$models   = [];
 		foreach ( $provider->list_models( (bool) $request->get_param( 'refresh' ) ) as $m ) {
 			$models[] = [
-				'id'               => $m['id'],
-				'label'            => $m['label'],
-				'prompt_price'     => round( (float) $m['prompt_price'] * 1e6, 4 ),
-				'completion_price' => round( (float) $m['completion_price'] * 1e6, 4 ),
-				'free'             => str_ends_with( (string) $m['id'], ':free' ),
+				'id'                 => $m['id'],
+				'label'              => $m['label'],
+				'prompt_price'       => round( (float) $m['prompt_price'] * 1e6, 4 ),
+				'completion_price'   => round( (float) $m['completion_price'] * 1e6, 4 ),
+				'free'               => str_ends_with( (string) $m['id'], ':free' ),
+				'structured_outputs' => ! empty( $m['structured_outputs'] ),
 			];
 		}
 		return new WP_REST_Response(

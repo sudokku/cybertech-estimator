@@ -72,7 +72,8 @@
 				continue;
 			}
 			const option = document.createElement( 'option' );
-			const label = `${ model.label || model.id } — ${ priceLabel( model ) }`;
+			const soNote = model.structured_outputs === false ? ' · no structured output' : '';
+			const label = `${ model.label || model.id } — ${ priceLabel( model ) }${ soNote }`;
 			option.value = model.id;
 			option.label = label;
 			option.textContent = label;
@@ -163,7 +164,10 @@
 			fill( models );
 
 			// D8: no slug is hardcoded; if the field is empty suggest the first free model.
-			const free = models.find( ( m ) => m && ( m.free === true || ( typeof m.id === 'string' && m.id.endsWith( ':free' ) ) ) );
+			// Prefer a free model that supports structured outputs: strict json_schema routing
+			// finds no endpoint on the others (most free models).
+			const isFree = ( m ) => m && ( m.free === true || ( typeof m.id === 'string' && m.id.endsWith( ':free' ) ) );
+			const free = models.find( ( m ) => isFree( m ) && m.structured_outputs === true ) || models.find( isFree );
 			if ( ! input.value.trim() && free ) {
 				input.value = free.id;
 				say( sprintf( cfg.i18n.suggested, free.id ), 'ok' );

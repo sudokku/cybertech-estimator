@@ -31,7 +31,12 @@ final class ResponseValidator {
 		$json = self::strip_fences( $raw );
 		$data = json_decode( $json, true );
 		if ( ! is_array( $data ) ) {
-			return self::fail( [ 'invalid_json' ] );
+			// Small models slip on brackets and trailing commas; repair conservatively before giving up.
+			$data = json_decode( self::repair_json( $json ), true );
+			if ( ! is_array( $data ) ) {
+				return self::fail( [ 'invalid_json' ] );
+			}
+			$warnings[] = 'json_repaired';
 		}
 
 		// Structure.
@@ -163,6 +168,52 @@ final class ResponseValidator {
 	}
 
 	/**
+	 * Conservative JSON repair: drop trailing commas and, walking the text
+	 * with a bracket stack (string-aware), replace a closing bracket that
+	 * does not match the open one — the "risks": [ … } slip seen in the
+	 * wild. Anything cleverer risks inventing content; the validator still
+	 * checks the result like any other reply.
+	 *
+	 * @param string $json Candidate JSON.
+	 */
+	public static function repair_json( string $json ): string {
+		$json  = (string) preg_replace( '/,\s*([}\]])/', '$1', $json );
+		$out   = '';
+		$stack = [];
+		$in    = false;
+		$len   = strlen( $json );
+		for ( $i = 0; $i < $len; $i++ ) {
+			$c = $json[ $i ];
+			if ( $in ) {
+				$out .= $c;
+				if ( '\\' === $c && $i + 1 < $len ) {
+					$out .= $json[ ++$i ];
+				} elseif ( '"' === $c ) {
+					$in = false;
+				}
+				continue;
+			}
+			if ( '"' === $c ) {
+				$in = true;
+			} elseif ( '{' === $c || '[' === $c ) {
+				$stack[] = $c;
+			} elseif ( '}' === $c || ']' === $c ) {
+				$open = array_pop( $stack );
+				if ( null === $open ) {
+					continue;
+					// Stray closer: drop it.
+				}
+				$c = '{' === $open ? '}' : ']';
+			}
+			$out .= $c;
+		}//end for
+		while ( $stack ) {
+			$out .= '{' === array_pop( $stack ) ? '}' : ']';
+		}
+		return $out;
+	}
+
+	/**
 	 * Currency symbols, currency words, or money-shaped numbers.
 	 *
 	 * @param string $text Text.
@@ -174,8 +225,10 @@ final class ResponseValidator {
 		if ( preg_match( '/\b(RON|EUR|USD|GBP|lei)\b/iu', $text ) ) {
 			return true;
 		}
-		// 12,500 / 12.500 / 1,200,000 — thousands-separated numbers are prices, never weeks.
-		if ( preg_match( '/\b\d{1,3}(?:[.,]\d{3})+\b/', $text ) ) {
+		// 12,500 / 12.500 / 1,200,000 — thousands-separated numbers are prices, never weeks…
+		// …unless they are plainly a count: "12,000-SKU", "12,000 users", "1.200 products".
+		$counts = 'sku|skus|items|products|users|members|customers|calls|records|rows|screens|orders|visitors|farms|employees|documents|emails|messages|pages|entries|lines';
+		if ( preg_match( '/\b\d{1,3}(?:[.,]\d{3})+\b(?!\s*(?:-\s*)?(?:' . $counts . ')\b)(?!-[A-Za-z])/i', $text ) ) {
 			return true;
 		}
 		// "12k" style figures.

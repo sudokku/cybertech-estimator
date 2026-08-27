@@ -66,7 +66,7 @@ final class PromptBuilder {
 		$lines[] = '';
 		$lines[] = PromptGuard::wrap( $guarded['text'] );
 		$lines[] = '';
-		$lines[] = 'Produce: a headline (max ' . self::HEADLINE_MAX . ' characters), a 2-3 sentence summary, 3-5 phases whose weeks sum to ' . $weeks . ', up to ' . self::ASSUMPTIONS_MAX . ' assumptions and up to ' . self::RISKS_MAX . ' risks.';
+		$lines[] = 'Produce: a headline (at most ' . ( self::HEADLINE_MAX - 10 ) . ' characters — shorter is better), a 2-3 sentence summary, 3-5 phases whose weeks sum to ' . $weeks . ', up to ' . self::ASSUMPTIONS_MAX . ' assumptions and up to ' . self::RISKS_MAX . ' risks.';
 
 		return [
 			'system'  => $system,
@@ -90,7 +90,7 @@ final class PromptBuilder {
 			'properties'           => [
 				'headline'    => [
 					'type'        => 'string',
-					'description' => 'Max ' . self::HEADLINE_MAX . ' characters. No money.',
+					'description' => 'At most ' . ( self::HEADLINE_MAX - 10 ) . ' characters. No money.',
 				],
 				'summary'     => [
 					'type'        => 'string',

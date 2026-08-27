@@ -51,6 +51,15 @@ final class ProviderResponse {
 	}
 
 	/**
+	 * Copy with a different raw payload (used to annotate the schema mode).
+	 *
+	 * @param array<string, mixed> $raw Raw payload.
+	 */
+	public function with_raw( array $raw ): self {
+		return new self( $this->ok, $this->content, $this->model, $this->prompt_tokens, $this->completion_tokens, $this->cost_usd, $this->latency_ms, $this->error, $raw );
+	}
+
+	/**
 	 * Serialise for the sandbox / lead meta.
 	 *
 	 * @return array<string, mixed>
@@ -64,6 +73,7 @@ final class ProviderResponse {
 			'cost_usd'          => $this->cost_usd,
 			'latency_ms'        => $this->latency_ms,
 			'error'             => $this->error,
+			'schema_mode'       => (string) ( $this->raw['schema_mode'] ?? '' ),
 		];
 	}
 }

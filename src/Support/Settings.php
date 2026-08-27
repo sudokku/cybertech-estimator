@@ -49,8 +49,9 @@ final class Settings {
 				'floor'                          => false,
 				'max_price'                      => 0.0,
 				// USD per 1M tokens ceiling; 0 = none.
-									'max_tokens' => 700,
-				'timeout'                        => 8,
+									'max_tokens' => 900,
+				// Verbose models truncate JSON at 700; the extra ~200 tokens cost ~nothing.
+									'timeout'    => 8,
 				'monthly_budget_cents'           => 500,
 				'cache_days'                     => 30,
 			],

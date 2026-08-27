@@ -627,4 +627,18 @@ final class ResponseValidatorTest extends TestCase {
 			$result['errors']
 		);
 	}
+
+	public function test_repairs_mismatched_closing_bracket_and_trailing_comma(): void {
+		$raw = '{"headline":"H","summary":"S","phases":[{"name":"P","weeks":4,"description":"D","roles":["PM"],}],"assumptions":["A"],"risks":["R"}}';
+		$out = ResponseValidator::validate( $raw, 4 );
+		self::assertTrue( $out['ok'], implode( ',', $out['errors'] ) );
+		self::assertContains( 'json_repaired', $out['warnings'] );
+		self::assertSame( [ 'R' ], $out['data']['risks'] );
+	}
+
+	public function test_counts_with_thousands_separators_are_not_money(): void {
+		self::assertFalse( ResponseValidator::contains_money( 'Migrate a 12,000-SKU catalogue with 1.200 products and 3,500 users' ) );
+		self::assertTrue( ResponseValidator::contains_money( 'Around 12,000 for the build' ) );
+		self::assertTrue( ResponseValidator::contains_money( 'Budget 12,500 EUR' ) );
+	}
 }

@@ -162,7 +162,7 @@ final class PromptBuilderTest extends TestCase {
 
 	public function test_production_instruction_carries_the_limits(): void {
 		$out = PromptBuilder::build( self::facts() );
-		$this->assertStringContainsString( 'headline (max 90 characters)', $out['user'] );
+		$this->assertStringContainsString( 'headline (at most 80 characters — shorter is better)', $out['user'] );
 		$this->assertStringContainsString( 'up to 4 assumptions and up to 3 risks', $out['user'] );
 		$this->assertStringContainsString( 'Respond with JSON matching the provided schema and nothing else.', $out['system'] );
 	}
