@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Cybertech\Estimator;
 
+use Cybertech\Estimator\Integration\MailNotifier;
+use Cybertech\Estimator\Integration\WebhookDispatcher;
 use Cybertech\Estimator\Lead\LeadPostType;
 use Cybertech\Estimator\Rest\PreviewController;
 use Cybertech\Estimator\Rest\SandboxController;
@@ -81,10 +83,15 @@ final class Plugin {
 			PreviewController::class,
 			SubmitController::class,
 			TokenController::class,
+			MailNotifier::class,
+			WebhookDispatcher::class,
 			'Cybertech\\Estimator\\Frontend\\Shortcode',
 			// Admin pages (each registers its own submenu under the Estimator menu).
 			'Cybertech\\Estimator\\Admin\\RateCardPage',
 			'Cybertech\\Estimator\\Admin\\SandboxPage',
+			'Cybertech\\Estimator\\Admin\\LeadColumns',
+			'Cybertech\\Estimator\\Admin\\LeadMetaBoxes',
+			'Cybertech\\Estimator\\Admin\\SettingsPage',
 		];
 	}
 
