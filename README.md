@@ -196,6 +196,10 @@ CI runs lint + tests on PHP 8.1 and 8.3; pushing a `v*` tag builds the zip and a
 
 Layout: `src/Engine` (pure pricing), `src/Ai`, `src/Security`, `src/Rest`, `src/Lead`, `src/Frontend`, `src/Admin`, `src/Integration`, `src/Privacy`, `templates/`, `assets/` (vanilla ES2020, plain CSS, no build step, no jQuery), `tests/Unit` (WordPress-free bootstrap with a handful of stubs), `demo/` (the demo theme reproducing cybertech.ro's UI; not shipped in the zip). Decisions are logged in [`docs/DECISIONS.md`](docs/DECISIONS.md), the build plan in [`docs/PLAN.md`](docs/PLAN.md).
 
+## Demo site
+
+`demo/theme/cybertech-demo` is a small classic theme that reproduces cybertech.ro's UI (hero dot-wave, dark service band, client wall, contact band) with the estimator wired in as the CTA; `demo/seed/seed-demo-site.sh` sets up the whole demo on a Local site (theme, pages, menu, 10 seeded leads). Neither ships in the plugin zip. Elementor was installed on the demo site only to verify the widget.
+
 ## Roadmap
 
 Written as a roadmap, not built:

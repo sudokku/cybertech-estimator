@@ -14,3 +14,6 @@ Dated, append-only. Numbers reference `docs/PLAN.md` §2 where applicable.
 - 2026-08-27 — `RateCard.php` was split: `RateCard` (pure value object + validate) and `RateCardRepository` (load/save/history/rollback in wp_options) so the engine stays WordPress-free.
 - 2026-08-27 — Provider interface methods are snake_case (`list_models`, `is_configured`) to satisfy WPCS; the brief's camelCase names were kept in spirit only.
 - 2026-08-27 — README documents the formula table, reveal modes, AI cost model, webhook payload + n8n verification snippet, GDPR, white-label point and roadmap.
+- 2026-08-27 — Demo theme uses the CUI shown on the live site footer (RO39659270) rather than the brief's RO39558270; flagged for Radu to confirm.
+- 2026-08-27 — Demo theme deviations from cybertech.ro: estimator CTA added to the nav and hero; service cards deep-link to the estimator with a service pre-filter; no photos/third-party logos (placeholders and text badges); CSS-only dark-band textures.
+- 2026-08-27 — Emails are sent synchronously on submit (reliable on demo sites without real cron); only the webhook is cron-dispatched.

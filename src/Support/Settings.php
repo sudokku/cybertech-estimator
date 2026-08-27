@@ -33,11 +33,12 @@ final class Settings {
 		// Share-link validity.
 			],
 			'security'      => [
-				'preview_per_hour'   => 10,
-				'submit_per_hour'    => 3,
-				'narrative_per_hour' => 6,
-				'min_seconds'        => 3,
-				'store_ip'           => false,
+				'preview_per_hour'                    => 60,
+				// Open mode previews on every change; 10/h blocked a normal visitor.
+									'submit_per_hour' => 3,
+				'narrative_per_hour'                  => 6,
+				'min_seconds'                         => 3,
+				'store_ip'                            => false,
 			// When on, the hashed IP is stored on the lead.
 			],
 			'ai'            => [
