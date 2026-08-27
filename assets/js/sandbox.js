@@ -502,6 +502,181 @@
 		} );
 	}
 
+	/* ---------- AI panel (explicit run — a provider call costs money) ---------- */
+
+	const ai = cfg.i18n.ai || {};
+	const aiRun = $( '#ct-sb-ai-run' );
+	const aiForce = $( '#ct-sb-force-fallback' );
+	const aiCache = $( '#ct-sb-use-cache' );
+
+	/** Replace a panel's content and clear its data-empty flag. */
+	const fillPanel = ( id, ...nodes ) => {
+		const el = document.getElementById( id );
+		if ( ! el ) {
+			return;
+		}
+		el.replaceChildren( ...nodes );
+		el.dataset.empty = nodes.length ? 'false' : 'true';
+	};
+
+	const pre = ( text, cls = '' ) => h( 'pre', { class: `ct-sb-ai__pre ${ cls }`.trim(), tabindex: 0 }, text || '' );
+
+	const usd = ( n ) => `$${ ( Number( n ) || 0 ).toFixed( 4 ) }`;
+
+	const renderPrompt = ( prompt ) => {
+		const nodes = [];
+		if ( prompt.flagged && prompt.flagged.length ) {
+			nodes.push( h( 'p', { class: 'ct-sb-ai__flag' }, sprintf( ai.flagged, prompt.flagged.join( ', ' ) ) ) );
+		}
+		nodes.push( h( 'h4', { class: 'ct-sb-ai__sub' }, ai.systemPrompt ), pre( prompt.system ) );
+		nodes.push( h( 'h4', { class: 'ct-sb-ai__sub' }, ai.userPrompt ), pre( prompt.user ) );
+		fillPanel( 'ct-sb-ai-prompt', ...nodes );
+	};
+
+	/** Narrative renderer shared by AI, cache and fallback sources. */
+	const renderNarrative = ( n, sourceLabel ) => {
+		const box = h( 'div', { class: 'ct-sb-narr' } );
+		box.append( h( 'p', { class: 'ct-sb-narr__source' }, sourceLabel ) );
+		if ( n.headline ) {
+			box.append( h( 'h4', { class: 'ct-sb-narr__headline' }, n.headline ) );
+		}
+		if ( n.summary ) {
+			box.append( h( 'p', { class: 'ct-sb-narr__summary' }, n.summary ) );
+		}
+		const phases = Array.isArray( n.phases ) ? n.phases : [];
+		if ( phases.length ) {
+			const table = h( 'table', { class: 'ct-sb-table ct-sb-narr__phases' } );
+			table.append( h( 'thead', {}, h( 'tr', {},
+				h( 'th', { scope: 'col' }, ai.phase ),
+				h( 'th', { scope: 'col', class: 'is-num' }, ai.weeksCol ),
+				h( 'th', { scope: 'col' }, ai.description ),
+				h( 'th', { scope: 'col' }, ai.roles )
+			) ) );
+			const body = h( 'tbody' );
+			for ( const p of phases ) {
+				body.append( h( 'tr', {},
+					h( 'th', { scope: 'row' }, String( p.name ?? '' ) ),
+					h( 'td', { class: 'is-num' }, fmtNum( p.weeks ?? 0 ) ),
+					h( 'td', {}, String( p.description ?? '' ) ),
+					h( 'td', {}, ( Array.isArray( p.roles ) ? p.roles : [] ).map( ( r ) => cfg.roleLabels[ r ] || String( r ) ).join( ', ' ) )
+				) );
+			}
+			table.append( body );
+			box.append( h( 'h5', { class: 'ct-sb-ai__sub' }, ai.phases ), h( 'div', { class: 'ct-sb-table-wrap' }, table ) );
+		}
+		for ( const [ key, title ] of [ [ 'assumptions', ai.assumptions ], [ 'risks', ai.risks ] ] ) {
+			const items = Array.isArray( n[ key ] ) ? n[ key ] : [];
+			if ( items.length ) {
+				box.append( h( 'h5', { class: 'ct-sb-ai__sub' }, title ), h( 'ul', { class: 'ct-sb-narr__list' }, ...items.map( ( t ) => h( 'li', {}, String( t ) ) ) ) );
+			}
+		}
+		return box;
+	};
+
+	const sourceLabel = ( data ) => {
+		if ( data.source === 'ai' ) {
+			return sprintf( ai.aiLabel, data.model || '' );
+		}
+		if ( data.source === 'cache' ) {
+			return sprintf( ai.cacheLabel, data.model || '' );
+		}
+		return ai.fallbackLabel;
+	};
+
+	const renderResponse = ( data ) => {
+		const nodes = [];
+		nodes.push( h( 'h4', { class: 'ct-sb-ai__sub' }, ai.rawTitle ) );
+		nodes.push( data.raw ? pre( data.raw ) : h( 'p', { class: 'ct-sb-ai__placeholder' }, ai.rawEmpty ) );
+		nodes.push( h( 'h4', { class: 'ct-sb-ai__sub' }, ai.parsedTitle ) );
+		nodes.push( renderNarrative( data.narrative || {}, sourceLabel( data ) ) );
+		fillPanel( 'ct-sb-ai-response', ...nodes );
+	};
+
+	const renderMeta = ( data ) => {
+		const dl = h( 'dl', { class: 'ct-sb-meta' } );
+		const row = ( term, ...defs ) => dl.append( h( 'dt', {}, term ), h( 'dd', {}, ...defs ) );
+		const resp = data.response || null;
+		const val = data.validation || null;
+		const none = ai.none;
+
+		row( ai.source, h( 'span', { class: `ct-sb-pill is-${ data.source }` }, String( data.source || none ) ) );
+		row( ai.reason, h( 'code', {}, String( data.reason || none ) ) );
+		row( ai.model, resp && resp.model ? resp.model : data.model || none );
+		row( ai.latency, resp ? sprintf( ai.ms, fmtNum( resp.latency_ms || 0 ) ) : none );
+		row( ai.tokens, resp ? `${ fmtNum( resp.prompt_tokens || 0 ) } / ${ fmtNum( resp.completion_tokens || 0 ) }` : none );
+		row( ai.cost, resp ? usd( resp.cost_usd ) : none );
+		if ( resp && resp.error ) {
+			row( ai.providerError, h( 'span', { class: 'ct-sb-ai__err' }, String( resp.error ) ) );
+		}
+
+		if ( ! val ) {
+			row( ai.validation, ai.validationNone );
+		} else {
+			const parts = [ h( 'span', { class: `ct-sb-pill ${ val.ok ? 'is-ok' : 'is-bad' }` }, val.ok ? ai.validationOk : `${ ( val.errors || [] ).length } ${ ai.errors.toLowerCase() }` ) ];
+			for ( const [ key, title, cls ] of [ [ 'errors', ai.errors, 'ct-sb-ai__err' ], [ 'warnings', ai.warnings, 'ct-sb-ai__warn' ] ] ) {
+				const items = Array.isArray( val[ key ] ) ? val[ key ] : [];
+				if ( items.length ) {
+					parts.push( h( 'ul', { class: `ct-sb-narr__list ${ cls }` }, ...items.map( ( t ) => h( 'li', {}, String( t ) ) ) ) );
+				}
+			}
+			row( ai.validation, ...parts );
+		}
+
+		const br = data.breaker || {};
+		const openUntil = Number( br.open_until || 0 );
+		let breakerText;
+		if ( openUntil * 1000 > Date.now() ) {
+			breakerText = sprintf( ai.breakerOpen, new Date( openUntil * 1000 ).toLocaleString( cfg.locale || 'en' ), fmtNum( br.failures || 0 ) );
+		} else {
+			breakerText = br.failures ? sprintf( ai.breakerFails, fmtNum( br.failures ) ) : ai.breakerClosed;
+		}
+		row( ai.breaker, breakerText );
+		row( ai.spend, sprintf( ai.cents, fmtNum( data.spend_cents || 0 ) ) );
+		if ( data.cache_key ) {
+			row( ai.cacheKey, h( 'code', {}, String( data.cache_key ) ) );
+		}
+		fillPanel( 'ct-sb-ai-meta', dl );
+	};
+
+	const runNarration = async () => {
+		if ( ! aiRun ) {
+			return;
+		}
+		aiRun.disabled = true;
+		setStatus( ai.running, 'busy' );
+		try {
+			const res = await fetch( cfg.narrativeUrl, {
+				method: 'POST',
+				credentials: 'same-origin',
+				headers: {
+					'Content-Type': 'application/json',
+					'X-WP-Nonce': cfg.nonce,
+				},
+				body: JSON.stringify( {
+					answers: readAnswers(),
+					force_fallback: Boolean( aiForce && aiForce.checked ),
+					use_cache: Boolean( aiCache && aiCache.checked ),
+				} ),
+			} );
+			const data = await res.json();
+			if ( ! res.ok ) {
+				throw new Error( data && data.message ? data.message : res.statusText );
+			}
+			renderPrompt( data.prompt || {} );
+			renderResponse( data );
+			renderMeta( data );
+			setStatus( '' );
+		} catch ( err ) {
+			setStatus( sprintf( ai.failed, err.message ), 'error' );
+		} finally {
+			aiRun.disabled = false;
+		}
+	};
+
+	if ( aiRun ) {
+		aiRun.addEventListener( 'click', runNarration );
+	}
+
 	applyVisibility();
 	updateNotesCount();
 	run();

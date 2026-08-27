@@ -60,6 +60,22 @@ if ( ! function_exists( 'apply_filters' ) ) {
 		return $value;
 	}
 }
+if ( ! function_exists( '_n' ) ) {
+	function _n( string $single, string $plural, int $number, string $domain = 'default' ): string { // phpcs:ignore
+		return 1 === $number ? $single : $plural;
+	}
+}
+if ( ! function_exists( 'sanitize_email' ) ) {
+	// Minimal stand-in: trim and drop characters WP's sanitize_email never lets through.
+	function sanitize_email( string $email ): string {
+		return (string) preg_replace( '/[^a-zA-Z0-9!#$%&\'*+\/=?^_`{|}~@.\[\]-]/', '', trim( $email ) );
+	}
+}
+if ( ! function_exists( 'is_email' ) ) {
+	function is_email( string $email ): string|false {
+		return false !== filter_var( $email, FILTER_VALIDATE_EMAIL ) && strlen( $email ) <= 254 ? $email : false;
+	}
+}
 if ( ! function_exists( 'wp_hash' ) ) {
 	function wp_hash( string $data, string $scheme = 'auth' ): string { // phpcs:ignore
 		return hash_hmac( 'md5', $data, 'test-salt' );

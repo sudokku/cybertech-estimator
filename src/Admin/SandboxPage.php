@@ -35,6 +35,7 @@ final class SandboxPage {
 	public const RATE_CARD_SLUG = 'ct-est-rate-card';
 	public const CAPABILITY     = 'manage_options';
 	public const HANDLE         = 'ct-est-sandbox';
+	public const SETTINGS_SLUG  = 'ct-est-settings';
 
 	/**
 	 * Hook suffix returned by add_submenu_page(); assets are enqueued only there.
@@ -134,6 +135,7 @@ final class SandboxPage {
 
 		return [
 			'endpoint'        => rest_url( SandboxController::NAMESPACE . '/sandbox/estimate' ),
+			'narrativeUrl'    => rest_url( SandboxController::NAMESPACE . '/sandbox/narrative' ),
 			'nonce'           => wp_create_nonce( 'wp_rest' ),
 			'questions'       => $questions,
 			'presets'         => self::presets(),
@@ -166,7 +168,65 @@ final class SandboxPage {
 				'copyFailed'  => __( 'Copy failed — select the text manually.', 'cybertech-estimator' ),
 				'openInCard'  => __( 'Open this value in the rate card', 'cybertech-estimator' ),
 				'notFromCard' => __( 'Derived value — not a rate-card field', 'cybertech-estimator' ),
+				'ai'          => self::ai_strings(),
 			],
+		];
+	}
+
+	/**
+	 * Strings for the AI panel renderer (kept server-side so they translate).
+	 *
+	 * @return array<string, string>
+	 */
+	private static function ai_strings(): array {
+		return [
+			'running'        => __( 'Narrating…', 'cybertech-estimator' ),
+			/* translators: %s: error message */
+			'failed'         => __( 'Narration failed: %s', 'cybertech-estimator' ),
+			'systemPrompt'   => __( 'System prompt', 'cybertech-estimator' ),
+			'userPrompt'     => __( 'User prompt', 'cybertech-estimator' ),
+			/* translators: %s: comma-separated pattern ids */
+			'flagged'        => __( 'injection markers stripped: %s', 'cybertech-estimator' ),
+			'rawEmpty'       => __( 'No raw response — the provider was not called.', 'cybertech-estimator' ),
+			'rawTitle'       => __( 'Raw model content', 'cybertech-estimator' ),
+			'parsedTitle'    => __( 'Rendered narrative', 'cybertech-estimator' ),
+			'fallbackLabel'  => __( 'Fallback (PHP template)', 'cybertech-estimator' ),
+			/* translators: %s: model id */
+			'aiLabel'        => __( 'AI (%s)', 'cybertech-estimator' ),
+			/* translators: %s: model id */
+			'cacheLabel'     => __( 'Cache (%s)', 'cybertech-estimator' ),
+			'phases'         => __( 'Phases', 'cybertech-estimator' ),
+			'phase'          => __( 'Phase', 'cybertech-estimator' ),
+			'weeksCol'       => __( 'Weeks', 'cybertech-estimator' ),
+			'description'    => __( 'Description', 'cybertech-estimator' ),
+			'roles'          => __( 'Roles', 'cybertech-estimator' ),
+			'assumptions'    => __( 'Assumptions', 'cybertech-estimator' ),
+			'risks'          => __( 'Risks', 'cybertech-estimator' ),
+			'source'         => __( 'Source', 'cybertech-estimator' ),
+			'reason'         => __( 'Reason', 'cybertech-estimator' ),
+			'model'          => __( 'Model', 'cybertech-estimator' ),
+			'latency'        => __( 'Latency', 'cybertech-estimator' ),
+			/* translators: %s: milliseconds */
+			'ms'             => __( '%s ms', 'cybertech-estimator' ),
+			'tokens'         => __( 'Tokens (prompt / completion)', 'cybertech-estimator' ),
+			'cost'           => __( 'Cost', 'cybertech-estimator' ),
+			'validation'     => __( 'Validation', 'cybertech-estimator' ),
+			'validationOk'   => __( 'ok', 'cybertech-estimator' ),
+			'validationNone' => __( 'not run', 'cybertech-estimator' ),
+			'errors'         => __( 'Errors', 'cybertech-estimator' ),
+			'warnings'       => __( 'Warnings', 'cybertech-estimator' ),
+			'breaker'        => __( 'Circuit breaker', 'cybertech-estimator' ),
+			'breakerClosed'  => __( 'closed', 'cybertech-estimator' ),
+			/* translators: 1: date-time, 2: failure count */
+			'breakerOpen'    => __( 'open until %1$s (%2$s failures)', 'cybertech-estimator' ),
+			/* translators: %s: failure count */
+			'breakerFails'   => __( 'closed (%s recent failures)', 'cybertech-estimator' ),
+			'spend'          => __( 'Month spend', 'cybertech-estimator' ),
+			/* translators: %s: cents */
+			'cents'          => __( '%s ¢', 'cybertech-estimator' ),
+			'cacheKey'       => __( 'Cache key', 'cybertech-estimator' ),
+			'providerError'  => __( 'Provider error', 'cybertech-estimator' ),
+			'none'           => __( '—', 'cybertech-estimator' ),
 		];
 	}
 
@@ -682,28 +742,46 @@ final class SandboxPage {
 	}
 
 	/**
-	 * Phase 4 shells. Ids are the contract: NarrativeService's sandbox hook
-	 * fills these in place, so keep them stable.
+	 * AI panel. The narration call is explicit (button) — never fired on
+	 * form change, because a real provider call costs money. The three
+	 * section ids are the contract NarrativeService diagnostics fill.
 	 */
 	private function render_ai_panel(): void {
-		$sections = [
+		$sections     = [
 			'ct-sb-ai-prompt'   => __( 'Prompt that would be sent', 'cybertech-estimator' ),
 			'ct-sb-ai-response' => __( 'Raw response', 'cybertech-estimator' ),
 			'ct-sb-ai-meta'     => __( 'Validation verdict · latency · tokens · cost', 'cybertech-estimator' ),
 		];
+		$settings_url = add_query_arg( 'tab', 'ai', admin_url( self::parent_slug() . '&page=' . self::SETTINGS_SLUG ) );
 		?>
-		<div class="ct-sb-panel__bar">
-			<p class="ct-sb-panel__lead"><?php esc_html_e( 'Narrative generation lands in Phase 4. The panels below are wired but empty.', 'cybertech-estimator' ); ?></p>
-			<label class="ct-sb-toggle" for="ct-sb-force-fallback">
-				<input type="checkbox" id="ct-sb-force-fallback" disabled>
-				<span><?php esc_html_e( 'Force fallback narrative', 'cybertech-estimator' ); ?></span>
-			</label>
+		<div class="ct-sb-panel__bar ct-sb-ai-bar">
+			<p class="ct-sb-panel__lead"><?php esc_html_e( 'Runs the full narration pipeline for the current answers: prompt guard, provider call (or fallback), validation, cache.', 'cybertech-estimator' ); ?></p>
+			<div class="ct-sb-ai-controls">
+				<label class="ct-sb-toggle" for="ct-sb-force-fallback">
+					<input type="checkbox" id="ct-sb-force-fallback">
+					<span><?php esc_html_e( 'Force fallback', 'cybertech-estimator' ); ?></span>
+				</label>
+				<label class="ct-sb-toggle" for="ct-sb-use-cache">
+					<input type="checkbox" id="ct-sb-use-cache" checked>
+					<span><?php esc_html_e( 'Use cache', 'cybertech-estimator' ); ?></span>
+				</label>
+				<button type="button" class="button button-primary" id="ct-sb-ai-run"><?php esc_html_e( 'Run narration', 'cybertech-estimator' ); ?></button>
+			</div>
 		</div>
+		<p class="ct-sb-ai-hint">
+			<?php
+			printf(
+				/* translators: %s: link to Settings → AI */
+				esc_html__( 'A tripped circuit breaker keeps returning the fallback; reset it under %s.', 'cybertech-estimator' ),
+				'<a href="' . esc_url( $settings_url ) . '">' . esc_html__( 'Settings → AI', 'cybertech-estimator' ) . '</a>'
+			);
+			?>
+		</p>
 		<?php foreach ( $sections as $id => $title ) : ?>
 			<section class="ct-sb-ai" aria-labelledby="<?php echo esc_attr( $id ); ?>-title">
 				<h3 class="ct-sb__h3" id="<?php echo esc_attr( $id ); ?>-title"><?php echo esc_html( $title ); ?></h3>
-				<div class="ct-sb-ai__body" id="<?php echo esc_attr( $id ); ?>" data-empty="true">
-					<p class="ct-sb-ai__placeholder"><?php esc_html_e( 'Available once the AI layer lands (Phase 4).', 'cybertech-estimator' ); ?></p>
+				<div class="ct-sb-ai__body" id="<?php echo esc_attr( $id ); ?>" data-empty="true" aria-live="polite">
+					<p class="ct-sb-ai__placeholder"><?php esc_html_e( 'Press “Run narration” to populate.', 'cybertech-estimator' ); ?></p>
 				</div>
 			</section>
 		<?php endforeach; ?>

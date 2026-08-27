@@ -1,6 +1,6 @@
 <?php
 /**
- * n8n webhook. Signed (HMAC-SHA256 over the raw body), dispatched via
+ * The n8n webhook. Signed (HMAC-SHA256 over the raw body), dispatched via
  * WP-Cron so the visitor's request never waits on a remote system, with
  * 3 retries on exponential backoff. Every attempt is logged to the lead.
  *
