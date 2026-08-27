@@ -13,7 +13,9 @@ declare(strict_types=1);
 namespace Cybertech\Estimator;
 
 use Cybertech\Estimator\Lead\LeadPostType;
+use Cybertech\Estimator\Rest\PreviewController;
 use Cybertech\Estimator\Rest\SandboxController;
+use Cybertech\Estimator\Rest\SubmitController;
 
 /**
  * Plugin container.
@@ -75,6 +77,8 @@ final class Plugin {
 		return [
 			LeadPostType::class,
 			SandboxController::class,
+			PreviewController::class,
+			SubmitController::class,
 			// Admin pages (each registers its own submenu under the Estimator menu).
 			'Cybertech\\Estimator\\Admin\\RateCardPage',
 			'Cybertech\\Estimator\\Admin\\SandboxPage',
