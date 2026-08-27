@@ -15,6 +15,8 @@ namespace Cybertech\Estimator;
 use Cybertech\Estimator\Integration\MailNotifier;
 use Cybertech\Estimator\Integration\WebhookDispatcher;
 use Cybertech\Estimator\Lead\LeadPostType;
+use Cybertech\Estimator\Rest\AdminAiController;
+use Cybertech\Estimator\Rest\NarrativeController;
 use Cybertech\Estimator\Rest\PreviewController;
 use Cybertech\Estimator\Rest\SandboxController;
 use Cybertech\Estimator\Rest\SubmitController;
@@ -83,6 +85,8 @@ final class Plugin {
 			PreviewController::class,
 			SubmitController::class,
 			TokenController::class,
+			NarrativeController::class,
+			AdminAiController::class,
 			MailNotifier::class,
 			WebhookDispatcher::class,
 			'Cybertech\\Estimator\\Frontend\\Shortcode',

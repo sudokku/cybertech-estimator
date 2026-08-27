@@ -257,7 +257,8 @@ final class PricingEngine {
 			$key = 'covers_high';
 		} elseif ( (float) $bmax >= $low ) {
 			$key = 'overlaps';
-		} elseif ( (float) $bmax > $low / 2 ) { // Strictly less than 50% below the low end.
+		} elseif ( (float) $bmax > $low / 2 ) {
+			// Strictly less than 50% below the low end.
 			$key = 'below_within_half';
 		} else {
 			$key = 'far_below';
@@ -275,7 +276,8 @@ final class PricingEngine {
 		$scope_src      = '';
 		foreach ( (array) ( $q['scope'] ?? [] ) as $i => $row ) {
 			$max = $row['max_hours'] ?? null;
-			if ( null === $max || $hours < (float) $max ) { // Strict: a band's max_hours is exclusive ("<80h", "80–300").
+			if ( null === $max || $hours < (float) $max ) {
+				// Strict: a band's max_hours is exclusive ("<80h", "80–300").
 				$parts['scope'] = (int) $row['points'];
 				$scope_src      = "qualification.scope.{$i}.points";
 				break;
