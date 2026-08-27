@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Cybertech\Estimator;
 
+use Cybertech\Estimator\Integration\ElementorIntegration;
 use Cybertech\Estimator\Integration\MailNotifier;
 use Cybertech\Estimator\Integration\WebhookDispatcher;
 use Cybertech\Estimator\Lead\LeadPostType;
@@ -97,6 +98,7 @@ final class Plugin {
 			RetentionCron::class,
 			DemoSeeder::class,
 			WebhookDispatcher::class,
+			ElementorIntegration::class,
 			'Cybertech\\Estimator\\Frontend\\Shortcode',
 			// Admin pages (each registers its own submenu under the Estimator menu).
 			'Cybertech\\Estimator\\Admin\\RateCardPage',
