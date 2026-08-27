@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Builds dist/cybertech-estimator.zip honouring .distignore (same rules as wp dist-archive).
+set -euo pipefail
+cd "$(dirname "$0")/.."
+VERSION=$(grep -E '^ \* Version:' cybertech-estimator.php | awk '{print $3}')
+rm -rf dist/build && mkdir -p dist/build/cybertech-estimator
+rsync -a --exclude-from=.distignore ./ dist/build/cybertech-estimator/
+( cd dist/build && zip -qr "../cybertech-estimator.zip" cybertech-estimator )
+rm -rf dist/build
+echo "dist/cybertech-estimator.zip (v$VERSION) — $(du -h dist/cybertech-estimator.zip | cut -f1)"

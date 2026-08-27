@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Dev-only wrapper: run WP-CLI against the Local site using Local's own PHP + php.ini
+# (so mysqli uses Local's socket). Usage: bin/wp plugin list
+set -euo pipefail
+LOCAL_RUN="$HOME/Library/Application Support/Local/run/_JiKY9VLl"
+LOCAL_PHP="$HOME/Library/Application Support/Local/lightning-services/php-8.2.29+0/bin/darwin-arm64/bin/php"
+SITE="$HOME/Local Sites/cybertech-cta-demo/app/public"
+WP_PHAR="$(command -v wp)"   # Homebrew's wp is the phar itself
+exec "$LOCAL_PHP" -c "$LOCAL_RUN/conf/php/php.ini" -d xdebug.mode=off "$WP_PHAR" --path="$SITE" --url="http://cybertech-cta-demo.local" "$@"

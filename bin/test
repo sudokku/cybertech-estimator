@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Runs PHPUnit with Local's PHP 8.2 (has Xdebug for coverage). Pass --coverage-text for coverage.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+LOCAL_PHP="$HOME/Library/Application Support/Local/lightning-services/php-8.2.29+0/bin/darwin-arm64/bin/php"
+PHP_BIN="${PHP_BIN:-$LOCAL_PHP}"
+[ -x "$PHP_BIN" ] || PHP_BIN=php
+MODE=off
+for a in "$@"; do case "$a" in --coverage*) MODE=coverage;; esac; done
+exec "$PHP_BIN" -d xdebug.mode=$MODE vendor/bin/phpunit "$@"

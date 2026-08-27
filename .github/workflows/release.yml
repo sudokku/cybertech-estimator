@@ -1,0 +1,25 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer
+      - run: composer install --no-interaction --prefer-dist
+      - run: vendor/bin/phpcs
+      - run: vendor/bin/phpunit
+      - name: Build plugin zip
+        run: bin/build-zip
+      - name: Create GitHub release with the zip
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/cybertech-estimator.zip
+          generate_release_notes: true
