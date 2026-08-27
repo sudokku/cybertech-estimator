@@ -81,7 +81,7 @@ final class WizardRenderer {
 		ob_start();
 		?>
 		<div class="ct-est" id="<?php echo esc_attr( $this->prefix ); ?>" data-ct-estimator data-ct-mode="<?php echo esc_attr( $this->mode ); ?>" data-ct-service="<?php echo esc_attr( $this->service ); ?>">
-			<script>document.currentScript.parentNode.classList.add('ct-est--js');</script>
+			<script>(function(s){if(s&&s.parentNode&&s.parentNode.hasAttribute('data-ct-estimator')){s.parentNode.classList.add('ct-est--js');}})(document.currentScript);</script>
 			<?php if ( '' !== $args['title'] ) : ?>
 				<h2 class="ct-est__title"><?php echo esc_html( $args['title'] ); ?></h2>
 			<?php endif; ?>

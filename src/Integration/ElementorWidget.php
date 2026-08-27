@@ -12,6 +12,7 @@ namespace Cybertech\Estimator\Integration;
 
 use Cybertech\Estimator\Engine\Questionnaire;
 use Cybertech\Estimator\Engine\RateCardRepository;
+use Cybertech\Estimator\Frontend\Assets;
 use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
 
@@ -57,6 +58,26 @@ final class ElementorWidget extends Widget_Base {
 	 */
 	public function get_keywords(): array {
 		return [ 'estimate', 'quote', 'calculator', 'cybertech', 'lead' ];
+	}
+
+	/**
+	 * Styles Elementor enqueues for this widget (editor preview + front end).
+	 *
+	 * @return array<int, string>
+	 */
+	public function get_style_depends(): array {
+		Assets::register();
+		return [ Assets::HANDLE_TOKENS, Assets::HANDLE_WIZARD ];
+	}
+
+	/**
+	 * Scripts Elementor enqueues for this widget (editor preview + front end).
+	 *
+	 * @return array<int, string>
+	 */
+	public function get_script_depends(): array {
+		Assets::register();
+		return [ Assets::HANDLE_WIZARD ];
 	}
 
 	/**
@@ -121,7 +142,7 @@ final class ElementorWidget extends Widget_Base {
 			[
 				'label'     => __( 'Accent colour', 'cybertech-estimator' ),
 				'type'      => Controls_Manager::COLOR,
-				'selectors' => [ '{{WRAPPER}} .ct-wizard' => '--ct-color-primary: {{VALUE}};' ],
+				'selectors' => [ '{{WRAPPER}} .ct-est' => '--ct-color-primary: {{VALUE}};' ],
 			]
 		);
 		$this->end_controls_section();

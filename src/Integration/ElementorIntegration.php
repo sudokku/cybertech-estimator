@@ -10,6 +10,9 @@ declare(strict_types=1);
 
 namespace Cybertech\Estimator\Integration;
 
+use Cybertech\Estimator\Frontend\Assets;
+use Cybertech\Estimator\Support\Settings;
+
 /**
  * Elementor hooks.
  */
@@ -30,7 +33,7 @@ final class ElementorIntegration {
 				}
 				add_action( 'elementor/elements/categories_registered', [ self::class, 'register_category' ] );
 				add_action( 'elementor/widgets/register', [ self::class, 'register_widget' ] );
-				add_action( 'elementor/editor/after_enqueue_styles', [ self::class, 'editor_styles' ] );
+				add_action( 'elementor/preview/enqueue_scripts', [ self::class, 'preview_assets' ] );
 			},
 			20
 		);
@@ -62,9 +65,19 @@ final class ElementorIntegration {
 	}
 
 	/**
-	 * Load the wizard styles inside the editor so the preview matches the front end.
+	 * The editor preview iframe renders widgets over AJAX, so the shortcode's
+	 * own `Assets::enqueue()` never runs in that request. Enqueue the wizard
+	 * assets + JS config here; per-placement mode/service come from the
+	 * wizard's data attributes, so one shared config is enough.
 	 */
-	public static function editor_styles(): void {
-		wp_enqueue_style( 'ct-est-tokens', CT_EST_URL . 'assets/css/tokens.css', [], CT_EST_VERSION );
+	public static function preview_assets(): void {
+		$permalink = get_permalink();
+		Assets::enqueue(
+			Assets::config(
+				Settings::reveal_mode(),
+				'',
+				is_string( $permalink ) && '' !== $permalink ? $permalink : home_url( '/' )
+			)
+		);
 	}
 }

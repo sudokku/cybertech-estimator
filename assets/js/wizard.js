@@ -1041,8 +1041,29 @@
 		}
 	}
 
-	document.querySelectorAll('[data-ct-estimator]').forEach((root) => {
-		root.classList.add('ct-est--js');
-		new Wizard(root);
-	});
+	function mount(scope) {
+		(scope || document).querySelectorAll('[data-ct-estimator]').forEach((root) => {
+			if (root.ctWizard) {
+				return;
+			}
+			root.classList.add('ct-est--js');
+			root.ctWizard = new Wizard(root);
+		});
+	}
+
+	mount(document);
+
+	/* Elementor re-renders widgets in the editor preview: mount again per element. */
+	function hookElementor() {
+		if (!window.elementorFrontend || !window.elementorFrontend.hooks) {
+			return false;
+		}
+		window.elementorFrontend.hooks.addAction('frontend/element_ready/ct_estimator.default', ($scope) => {
+			mount($scope && $scope[0] ? $scope[0] : document);
+		});
+		return true;
+	}
+	if (!hookElementor() && window.jQuery) {
+		window.jQuery(window).on('elementor/frontend/init', hookElementor);
+	}
 })();

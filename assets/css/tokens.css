@@ -70,3 +70,19 @@
 	--ct-duration: 180ms;
 	--ct-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
+
+/*
+ * Derived tokens re-declared on the wizard root so an override of
+ * `--ct-color-primary` scoped to `.ct-est` (Elementor accent control, theme
+ * per-placement styling) also recolours gradients, hover and focus states.
+ * Custom properties resolve where they are declared, so the `:root` copies
+ * above would otherwise keep the default primary.
+ */
+.ct-est {
+	--ct-color-primary-dark: color-mix(in srgb, var(--ct-color-primary) 84%, black);
+	--ct-gradient: linear-gradient(145deg, var(--ct-color-primary), var(--ct-color-accent));
+	--ct-horizon: linear-gradient(90deg, var(--ct-color-primary) 0%, var(--ct-color-accent) 60%, transparent 100%);
+	--ct-shadow-hover: 0 10px 15px color-mix(in srgb, var(--ct-color-primary) 10%, transparent);
+	--ct-focus-ring: 0 0 0 3px var(--ct-color-bg), 0 0 0 6px var(--ct-color-primary);
+	--ct-focus-outline: 2px solid var(--ct-color-primary);
+}
