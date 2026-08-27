@@ -49,7 +49,7 @@ final class RevealPolicy {
 			),
 			'team'       => self::team_labels( $result ),
 			'band'       => $result->band,
-			'band_label' => $result->band_label,
+			'band_label' => RateCardDefaults::localize_label( $result->band_label ),
 		];
 
 		if ( 'band' === $mode ) {

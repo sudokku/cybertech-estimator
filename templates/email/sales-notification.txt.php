@@ -15,7 +15,7 @@ echo esc_html( __( 'New estimate request', 'cybertech-estimator' ) ), "\n";
 echo esc_html( $data['service_label'] . ' · ' . $data['range'] ), "\n\n";
 echo esc_html( __( 'Duration', 'cybertech-estimator' ) . ': ' . sprintf( /* translators: %d: weeks */ _n( '%d week', '%d weeks', $ct_est_result->weeks, 'cybertech-estimator' ), $ct_est_result->weeks ) ), "\n";
 echo esc_html( __( 'Hours', 'cybertech-estimator' ) . ': ' . round( $ct_est_result->hours ) . ' h' ), "\n";
-echo esc_html( __( 'Band', 'cybertech-estimator' ) . ': ' . $ct_est_result->band_label ), "\n";
+echo esc_html( __( 'Band', 'cybertech-estimator' ) . ': ' . $data['band_label'] ), "\n";
 echo esc_html( __( 'Qualification', 'cybertech-estimator' ) . ': ' . $ct_est_result->qualification . '/100' ), "\n\n";
 echo esc_html( __( 'Contact', 'cybertech-estimator' ) ), "\n";
 foreach ( $data['contact'] as $ct_est_k => $ct_est_v ) {

@@ -153,7 +153,7 @@ final class SharePage {
 			'mode'              => $mode,
 			'show_figures'      => $show_figures,
 			'range_text'        => $show_figures ? Money::range( $result->price_low, $result->price_high, $result->currency ) : '',
-			'band_label'        => $result->band_label,
+			'band_label'        => RateCardDefaults::localize_label( $result->band_label ),
 			'weeks'             => $result->weeks,
 			'weeks_text'        => sprintf(
 				/* translators: %d: number of weeks */
@@ -164,7 +164,7 @@ final class SharePage {
 			'team'              => $team,
 			'team_size'         => count( $team ),
 			'role_labels'       => RateCardDefaults::role_labels(),
-			'service_label'     => $service_label,
+			'service_label'     => RateCardDefaults::localize_label( $service_label ),
 			'labels'            => $this->public_labels( $labels, $show_figures ),
 			'narrative'         => $this->narrative( $lead_id, $result, $labels, $card ),
 			'ai_status'         => (string) get_post_meta( $lead_id, LeadRepository::META_AI_STATUS, true ),

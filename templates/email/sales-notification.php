@@ -34,7 +34,7 @@ $ct_est_colour  = $ct_est_score >= 70 ? '#1a7f37' : ( $ct_est_score >= 40 ? '#b7
 			<tr>
 				<td style="padding:0 24px 0 0;"><span style="font-size:12px;color:#717173;"><?php esc_html_e( 'Duration', 'cybertech-estimator' ); ?></span><br><strong><?php echo esc_html( sprintf( /* translators: %d: weeks */ _n( '%d week', '%d weeks', $ct_est_result->weeks, 'cybertech-estimator' ), $ct_est_result->weeks ) ); ?></strong></td>
 				<td style="padding:0 24px 0 0;"><span style="font-size:12px;color:#717173;"><?php esc_html_e( 'Hours', 'cybertech-estimator' ); ?></span><br><strong><?php echo esc_html( (string) round( $ct_est_result->hours ) ); ?> h</strong></td>
-				<td style="padding:0 24px 0 0;"><span style="font-size:12px;color:#717173;"><?php esc_html_e( 'Band', 'cybertech-estimator' ); ?></span><br><strong><?php echo esc_html( $ct_est_result->band_label ); ?></strong></td>
+				<td style="padding:0 24px 0 0;"><span style="font-size:12px;color:#717173;"><?php esc_html_e( 'Band', 'cybertech-estimator' ); ?></span><br><strong><?php echo esc_html( $data['band_label'] ); ?></strong></td>
 				<td><span style="font-size:12px;color:#717173;"><?php esc_html_e( 'Qualification', 'cybertech-estimator' ); ?></span><br><strong style="color:<?php echo esc_attr( $ct_est_colour ); ?>;"><?php echo esc_html( (string) $ct_est_score ); ?>/100</strong></td>
 			</tr>
 		</table>

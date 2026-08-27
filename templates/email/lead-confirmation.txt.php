@@ -16,7 +16,7 @@ echo esc_html( sprintf( /* translators: 1: company name, 2: service line */ __( 
 if ( 'band' !== $data['reveal_mode'] ) {
 	echo esc_html( __( 'Estimated range', 'cybertech-estimator' ) . ': ' . $data['range'] ), "\n";
 } else {
-	echo esc_html( __( 'Engagement size', 'cybertech-estimator' ) . ': ' . $ct_est_result->band_label ), "\n";
+	echo esc_html( __( 'Engagement size', 'cybertech-estimator' ) . ': ' . $data['band_label'] ), "\n";
 }
 echo esc_html( __( 'Estimated duration', 'cybertech-estimator' ) . ': ' . sprintf( /* translators: %d: weeks */ _n( '%d week', '%d weeks', $ct_est_result->weeks, 'cybertech-estimator' ), $ct_est_result->weeks ) ), "\n\n";
 echo esc_html( __( 'View your estimate', 'cybertech-estimator' ) . ': ' . $data['share_url'] ), "\n\n";

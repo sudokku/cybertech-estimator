@@ -403,6 +403,34 @@ final class RateCardDefaults {
 	}
 
 	/**
+	 * Localise a label that is stored inside the saved rate card. Stored
+	 * labels bypass gettext, so a Romanian site would show "Web solutions"
+	 * from an English card. Rule: translate only while the stored text still
+	 * equals the English default — an admin who renamed it wins.
+	 *
+	 * @param string $stored Label as stored in the card.
+	 */
+	public static function localize_label( string $stored ): string {
+		switch ( $stored ) {
+			case 'Web solutions':
+				return __( 'Web solutions', 'cybertech-estimator' );
+			case 'Mobile application':
+				return __( 'Mobile application', 'cybertech-estimator' );
+			case 'UI/UX Design':
+				return __( 'UI/UX Design', 'cybertech-estimator' );
+			case 'AI Integration & Automation':
+				return __( 'AI Integration & Automation', 'cybertech-estimator' );
+			case 'Small engagement':
+				return __( 'Small engagement', 'cybertech-estimator' );
+			case 'Mid-size engagement':
+				return __( 'Mid-size engagement', 'cybertech-estimator' );
+			case 'Enterprise engagement':
+				return __( 'Enterprise engagement', 'cybertech-estimator' );
+		}
+		return $stored;
+	}
+
+	/**
 	 * Translated role labels (kept out of the card so they follow the site locale).
 	 *
 	 * @return array<string, string>

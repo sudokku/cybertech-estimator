@@ -35,7 +35,7 @@ $ct_est_figures = 'band' !== $data['reveal_mode'];
 					<div style="font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:26px;font-weight:800;color:<?php echo esc_attr( $ct_est_primary ); ?>;margin:2px 0 10px;"><?php echo esc_html( $data['range'] ); ?></div>
 				<?php else : ?>
 					<div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#717173;"><?php esc_html_e( 'Engagement size', 'cybertech-estimator' ); ?></div>
-					<div style="font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:22px;font-weight:800;color:<?php echo esc_attr( $ct_est_primary ); ?>;margin:2px 0 10px;"><?php echo esc_html( $ct_est_result->band_label ); ?></div>
+					<div style="font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:22px;font-weight:800;color:<?php echo esc_attr( $ct_est_primary ); ?>;margin:2px 0 10px;"><?php echo esc_html( $data['band_label'] ); ?></div>
 				<?php endif; ?>
 				<div><?php echo esc_html( __( 'Estimated duration', 'cybertech-estimator' ) . ': ' . sprintf( /* translators: %d: weeks */ _n( '%d week', '%d weeks', $ct_est_result->weeks, 'cybertech-estimator' ), $ct_est_result->weeks ) ); ?></div>
 			</td></tr>
