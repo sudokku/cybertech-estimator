@@ -10,3 +10,7 @@ Dated, append-only. Numbers reference `docs/PLAN.md` §2 where applicable.
 - 2026-08-27 — Repo lives at `~/Developer/cybertech-estimator`, symlinked into the Local site's `wp-content/plugins/`. `demo/` (theme + seed) is in the repo but excluded from the zip via `.distignore`.
 - 2026-08-27 — License GPL-2.0-or-later (WordPress convention; required for any wp.org listing).
 - 2026-08-27 — Option names: `ct_est_settings` (Settings API array), `ct_est_rate_card`, `ct_est_rate_card_history`, `ct_est_version`, `ct_est_log`; transients prefixed `ct_est_`.
+- 2026-08-27 — Default preview rate limit raised 10 → 60/hour (frontend agent finding: open mode fires a preview per answer change; 10 blocked a normal visitor). Submit stays 3/h, narrative 6/h.
+- 2026-08-27 — `RateCard.php` was split: `RateCard` (pure value object + validate) and `RateCardRepository` (load/save/history/rollback in wp_options) so the engine stays WordPress-free.
+- 2026-08-27 — Provider interface methods are snake_case (`list_models`, `is_configured`) to satisfy WPCS; the brief's camelCase names were kept in spirit only.
+- 2026-08-27 — README documents the formula table, reveal modes, AI cost model, webhook payload + n8n verification snippet, GDPR, white-label point and roadmap.

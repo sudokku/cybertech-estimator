@@ -1,0 +1,72 @@
+/**
+ * Cybertech Project Estimator — design tokens.
+ *
+ * Colours and type are the client's live-site tokens (cybertech.ro).
+ * Fonts are NOT loaded here (no Google Fonts from the plugin — GDPR):
+ * the theme supplies Montserrat/Poppins and we inherit, with a system
+ * stack as fallback.
+ */
+:root {
+	/* Colour */
+	--ct-color-primary: #1c67fa;
+	--ct-color-primary-dark: #1554d6;
+	--ct-color-accent: #4eceee;
+	--ct-color-ink: #1f1f25;
+	--ct-color-body: #717173; /* 4.6:1 on white — helper text only */
+	--ct-color-muted: #5f5f63; /* 6.3:1 on white — safe for small helper text */
+	--ct-color-bg: #ffffff;
+	--ct-color-surface: #f8f8f8;
+	--ct-color-surface-2: #f1f4fa;
+	--ct-color-dark: #191919;
+	--ct-color-border: #e9e9e9;
+	--ct-color-border-strong: #c9ccd6;
+	--ct-color-error: #b3261e;
+	--ct-color-error-bg: #fdf2f1;
+	--ct-color-success: #1b7f4b;
+	--ct-color-on-primary: #ffffff;
+
+	/* Maritime accent: primary → cyan, used sparingly */
+	--ct-gradient: linear-gradient(145deg, var(--ct-color-primary), var(--ct-color-accent));
+	--ct-gradient-depth: linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
+	--ct-horizon: linear-gradient(90deg, var(--ct-color-primary) 0%, var(--ct-color-accent) 60%, transparent 100%);
+
+	/* Type */
+	--ct-font-heading: 'Montserrat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	--ct-font-body: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	--ct-text-xs: 0.8125rem;
+	--ct-text-sm: 0.9375rem;
+	--ct-text-md: 1rem;
+	--ct-text-lg: 1.25rem;
+	--ct-text-xl: 1.625rem;
+	--ct-text-2xl: 2.25rem;
+	--ct-leading: 1.6;
+	--ct-tracking-button: 2px;
+
+	/* Spacing */
+	--ct-space-1: 0.25rem;
+	--ct-space-2: 0.5rem;
+	--ct-space-3: 0.75rem;
+	--ct-space-4: 1rem;
+	--ct-space-5: 1.5rem;
+	--ct-space-6: 2rem;
+	--ct-space-7: 3rem;
+
+	/* Shape */
+	--ct-radius-card: 5px;
+	--ct-radius-button: 0;
+	--ct-border-width: 2px;
+	--ct-max-width: 46rem;
+
+	/* Elevation */
+	--ct-shadow-sm: 0 1px 2px rgba(31, 31, 37, 0.06);
+	--ct-shadow-card: 0 10px 30px rgba(31, 31, 37, 0.08);
+	--ct-shadow-hover: 0 10px 15px rgba(28, 103, 250, 0.1);
+
+	/* Focus */
+	--ct-focus-ring: 0 0 0 3px var(--ct-color-bg), 0 0 0 6px var(--ct-color-primary);
+	--ct-focus-outline: 2px solid var(--ct-color-primary);
+
+	/* Motion */
+	--ct-duration: 180ms;
+	--ct-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

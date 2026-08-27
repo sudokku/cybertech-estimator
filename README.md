@@ -177,7 +177,7 @@ Every brand string, colour, logo and contact address lives in **one file**: [`sr
 
 ## Security notes
 
-- Public endpoints use a named permission callback that runs the rate limiter (defaults 10 previews, 3 submissions, 6 narrations per hour per hashed IP **and** per session cookie) → HTTP 429 with a friendly message. Admin endpoints check `manage_options`.
+- Public endpoints use a named permission callback that runs the rate limiter (defaults 60 previews, 3 submissions, 6 narrations per hour per hashed IP **and** per session cookie) → HTTP 429 with a friendly message. Admin endpoints check `manage_options`.
 - Input is validated against the questionnaire schema: unknown ids and out-of-range options are rejected, numbers clamped, free text stripped and capped at 1000 characters.
 - Output is escaped at the point of output, including cached AI text.
 - Share tokens are 32 random alphanumerics (`wp_generate_password`).
