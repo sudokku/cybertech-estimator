@@ -4,6 +4,15 @@ All notable changes to this project are documented here. Format: Keep a Changelo
 
 ## [Unreleased]
 
+## [0.1.1] — 2026-08-27
+
+### Added
+- Free OpenRouter models usable: structured-output/reasoning capability flags, prompt-only downgrade, reasoning disabled, bounded 429 retry, conservative JSON repair, count-noun money exemption; `max_tokens` default 900.
+- Demo theme provisions the site on activation (`wp cybertech-demo provision`); release ships `cybertech-demo-theme.zip`; Playground blueprint installs the theme.
+- Tunnel-friendly `WP_HOME` override documented for demos (ngrok / Cloudflare).
+
+## [0.1.0] — 2026-08-27
+
 ### Added
 - Phase 0: plugin bootstrap, SPL autoloader, `Brand` white-label config, `ct_estimate_lead` post type, PHPCS/PHPUnit tooling, CI and release workflows.
 - Phase 1: declarative questionnaire, versioned rate card with defaults/history/rollback, pure pricing engine with step-by-step breakdown, team composer, qualification score, admin Sandbox and Rate card pages, 167 unit tests (engine at 100% lines).

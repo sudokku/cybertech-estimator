@@ -22,7 +22,9 @@ Built as a pitch piece for [Cybertech](https://cybertech.ro) (ALANTIS WEB STUDIO
 
 **From a release:** download `cybertech-estimator.zip` from the [latest release](https://github.com/sudokku/cybertech-estimator/releases/latest) → Plugins → Add New → Upload Plugin → Activate.
 
-**Try it in the browser:** open the WordPress Playground blueprint — `https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/sudokku/cybertech-estimator/main/blueprint.json` — it boots a seeded demo (10 leads, the estimator page, admin `admin`/`password`).
+**Try it in the browser (no hosting needed):** open the WordPress Playground link — [playground.wordpress.net/?blueprint-url=…/blueprint.json&storage=browser](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/sudokku/cybertech-estimator/main/blueprint.json&storage=browser) — it boots the full demo in about a minute: the Cybertech-styled demo theme, the estimator page, 10 seeded leads, admin `admin`/`password`. Everything runs in your browser; `storage=browser` keeps your session across reloads. Email delivery and outbound webhooks do not work in Playground; everything else does.
+
+**Host it anywhere in two uploads:** on any WordPress (a throwaway host, a staging site) upload `cybertech-estimator.zip` and `cybertech-demo-theme.zip` from the release, activate both — the theme creates the pages, menu and front page on activation — then Estimator → Settings → Diagnostics → *Seed demo data*.
 
 **Then:**
 

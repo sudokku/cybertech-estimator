@@ -3,7 +3,7 @@
  * Plugin Name:       Cybertech Project Estimator
  * Plugin URI:        https://github.com/sudokku/cybertech-estimator
  * Description:       Interactive project estimator: a guided questionnaire that prices Web, Mobile, UI/UX and AI Automation projects from an editable rate card, captures qualified leads and produces a shareable estimate page.
- * Version:           0.1.0
+ * Version:           0.1.1
  * Requires at least: 6.4
  * Requires PHP:      8.1
  * Author:            Radu Chirilov
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'CT_EST_VERSION', '0.1.0' );
+define( 'CT_EST_VERSION', '0.1.1' );
 define( 'CT_EST_FILE', __FILE__ );
 define( 'CT_EST_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CT_EST_URL', plugin_dir_url( __FILE__ ) );

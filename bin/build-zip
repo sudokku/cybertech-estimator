@@ -8,3 +8,8 @@ rsync -a --exclude-from=.distignore ./ dist/build/cybertech-estimator/
 ( cd dist/build && zip -qr "../cybertech-estimator.zip" cybertech-estimator )
 rm -rf dist/build
 echo "dist/cybertech-estimator.zip (v$VERSION) — $(du -h dist/cybertech-estimator.zip | cut -f1)"
+# Demo theme as a separate zip (for Playground and throwaway hosts).
+rm -rf dist/theme-build && mkdir -p dist/theme-build && cp -R demo/theme/cybertech-demo dist/theme-build/cybertech-demo
+( cd dist/theme-build && zip -qr "../cybertech-demo-theme.zip" cybertech-demo -x '*.DS_Store' )
+rm -rf dist/theme-build
+echo "dist/cybertech-demo-theme.zip — $(du -h dist/cybertech-demo-theme.zip | cut -f1)"

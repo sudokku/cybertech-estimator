@@ -1,12 +1,13 @@
 {
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
-  "landingPage": "/estimate-project/",
+  "landingPage": "/",
   "preferredVersions": { "php": "8.2", "wp": "latest" },
   "features": { "networking": true },
   "login": true,
   "steps": [
     { "step": "installPlugin", "pluginData": { "resource": "url", "url": "https://github.com/sudokku/cybertech-estimator/releases/latest/download/cybertech-estimator.zip" }, "options": { "activate": true } },
-    { "step": "setSiteOptions", "options": { "blogname": "Cybertech CTA demo", "permalink_structure": "/%postname%/" } },
-    { "step": "runPHP", "code": "<?php require '/wordpress/wp-load.php'; $id = wp_insert_post(['post_type'=>'page','post_status'=>'publish','post_title'=>'Estimate my project','post_name'=>'estimate-project','post_content'=>'[cybertech_estimator]']); update_option('show_on_front','page'); update_option('page_on_front',$id); flush_rewrite_rules(); (new \\Cybertech\\Estimator\\Admin\\DemoSeeder())->seed();" }
+    { "step": "installTheme", "themeData": { "resource": "url", "url": "https://github.com/sudokku/cybertech-estimator/releases/latest/download/cybertech-demo-theme.zip" }, "options": { "activate": true } },
+    { "step": "setSiteOptions", "options": { "permalink_structure": "/%postname%/" } },
+    { "step": "runPHP", "code": "<?php require '/wordpress/wp-load.php'; if ( function_exists( 'cybertech_demo_provision' ) ) { cybertech_demo_provision(); } (new \\Cybertech\\Estimator\\Admin\\DemoSeeder())->seed(); flush_rewrite_rules();" }
   ]
 }

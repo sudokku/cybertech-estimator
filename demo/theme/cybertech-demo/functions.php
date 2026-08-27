@@ -11,6 +11,8 @@ define( 'CYBERTECH_DEMO_VERSION', '0.1.0' );
 
 require_once get_theme_file_path( 'inc/icons.php' );
 
+require_once get_template_directory() . '/inc/provision.php';
+
 /**
  * Google Fonts stylesheet (the theme owns fonts; the plugin inherits them).
  * CSS API v1 is used on purpose: a single `family` param survives
