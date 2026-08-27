@@ -27,7 +27,7 @@ final class Brand {
 		return [
 			'company'         => 'Cybertech',
 			'legal_name'      => 'ALANTIS WEB STUDIO S.R.L.',
-			'tagline'         => 'Navigating the digital ocean since 1999',
+			'tagline'         => __( 'Navigating the digital ocean since 1999', 'cybertech-estimator' ),
 			'website'         => 'https://cybertech.ro',
 			'contact_email'   => 'office@cybertech.ro',
 			'contact_phone'   => '+40 723 168 188',
@@ -40,7 +40,7 @@ final class Brand {
 			'color_bg'        => '#FFFFFF',
 			'font_heading'    => 'Montserrat',
 			'font_body'       => 'Poppins',
-			'consent_text'    => 'I agree that Cybertech may store the information above to prepare and follow up on this estimate. See the Privacy Policy.',
+			'consent_text'    => __( 'I agree that Cybertech may store the information above to prepare and follow up on this estimate. See the Privacy Policy.', 'cybertech-estimator' ),
 			'consent_version' => '2026-08-27',
 		];
 	}
