@@ -35,6 +35,7 @@ final class RateCard {
 	public function __construct( array $data ) {
 		$errors = self::validate( $data );
 		if ( $errors ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped -- pure class, message is developer-facing.
 			throw new \InvalidArgumentException( 'Invalid rate card: ' . implode( '; ', $errors ) );
 		}
 		$this->data = $data;

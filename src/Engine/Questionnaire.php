@@ -630,12 +630,12 @@ final class Questionnaire {
 	 * @param string               $label   Label.
 	 * @param int                  $min     Minimum.
 	 * @param int                  $max     Maximum.
-	 * @param int                  $default Default.
+	 * @param int                  $initial Default value.
 	 * @param array<int, string>   $factors Factor ids.
 	 * @param array<string, mixed> $extra   Extra keys.
 	 * @return array<string, mixed>
 	 */
-	private static function number( string $id, string $label, int $min, int $max, int $default, array $factors, array $extra = [] ): array {
+	private static function number( string $id, string $label, int $min, int $max, int $initial, array $factors, array $extra = [] ): array {
 		return array_merge(
 			[
 				'id'       => $id,
@@ -645,7 +645,7 @@ final class Questionnaire {
 				'required' => true,
 				'min'      => $min,
 				'max'      => $max,
-				'default'  => $default,
+				'default'  => $initial,
 				'factors'  => $factors,
 			],
 			$extra

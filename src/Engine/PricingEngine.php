@@ -29,6 +29,11 @@ namespace Cybertech\Estimator\Engine;
  */
 final class PricingEngine {
 
+	/**
+	 * Calculation log for the current run.
+	 *
+	 * @var Breakdown
+	 */
 	private Breakdown $breakdown;
 
 	/**
@@ -52,6 +57,7 @@ final class PricingEngine {
 	public function estimate(): EstimateResult {
 		$line = (string) ( $this->answers['service_line'] ?? '' );
 		if ( ! $this->card->has_service_line( $line ) ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped -- pure class, message is developer-facing.
 			throw new \InvalidArgumentException( "Unknown service line '{$line}'." );
 		}
 		$b        = $this->breakdown;
