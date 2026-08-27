@@ -82,7 +82,8 @@ final class RetentionCron {
 	 * Suggested privacy-policy text (Settings → Privacy → Policy Guide).
 	 */
 	public function privacy_policy_content(): void {
-		if ( ! function_exists( 'wp_add_privacy_policy_content' ) ) {
+		// admin_init also fires under WP-CLI, where core rejects the call.
+		if ( ! is_admin() || ! function_exists( 'wp_add_privacy_policy_content' ) ) {
 			return;
 		}
 		$days    = (int) Settings::get( 'privacy.retention_days' );
