@@ -45,7 +45,7 @@ final class InputSanitizer {
 			if ( ! array_key_exists( $id, $raw ) ) {
 				continue;
 			}
-			$clean = $this->clean_value( $question, $raw[ $id ], $errors );
+			$clean = $this->clean_value( $question, $raw[ $id ], $errors, $mode );
 			if ( null === $clean ) {
 				continue;
 			}
@@ -88,9 +88,10 @@ final class InputSanitizer {
 	 * @param array<string, mixed>  $question Schema entry.
 	 * @param mixed                 $value    Raw value.
 	 * @param array<string, string> $errors   Error sink (by reference).
+	 * @param string                $mode     preview | submit.
 	 * @return mixed
 	 */
-	private function clean_value( array $question, mixed $value, array &$errors ): mixed {
+	private function clean_value( array $question, mixed $value, array &$errors, string $mode ): mixed {
 		$id = (string) $question['id'];
 		switch ( $question['type'] ) {
 			case Questionnaire::TYPE_SINGLE:
@@ -115,7 +116,8 @@ final class InputSanitizer {
 				}
 				$vals = array_values( array_unique( $vals ) );
 				if ( ! $vals ) {
-					if ( ! empty( $question['required'] ) ) {
+					// An empty multi-select is only an error once the visitor submits.
+					if ( ! empty( $question['required'] ) && self::MODE_SUBMIT === $mode ) {
 						$errors[ $id ] = __( 'Please choose at least one option.', 'cybertech-estimator' );
 					}
 					return null;
@@ -127,7 +129,8 @@ final class InputSanitizer {
 					$errors[ $id ] = __( 'Please enter a number.', 'cybertech-estimator' );
 					return null;
 				}
-				return max( (int) $question['min'], min( (int) $question['max'], (int) round( (float) $value ) ) );
+				// Clamp as float first: casting a huge float to int wraps negative and would collapse to the minimum.
+				return (int) max( (float) $question['min'], min( (float) $question['max'], round( (float) $value ) ) );
 
 			case Questionnaire::TYPE_TEXT:
 				if ( ! is_scalar( $value ) ) {

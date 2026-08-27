@@ -31,11 +31,13 @@ final class FallbackNarrative {
 		return [
 			'headline'    => self::headline( $line, $weeks ),
 			'summary'     => sprintf(
-				/* translators: 1: service line label, 2: weeks, 3: number of roles */
-				__( 'Based on your answers, this %1$s project is scoped at about %2$d weeks of work for a team of %3$d roles. The plan below is an indication built from your selections; we refine it together before any commitment.', 'cybertech-estimator' ),
+				/* translators: 1: service line label, 2: "N weeks", 3: "N roles" */
+				__( 'Based on your answers, this %1$s project is scoped at about %2$s of work for a team of %3$s. The plan below is an indication built from your selections; we refine it together before any commitment.', 'cybertech-estimator' ),
 				$label,
-				$weeks,
-				max( 1, count( $roles ) )
+				/* translators: %d: weeks */
+				sprintf( _n( '%d week', '%d weeks', $weeks, 'cybertech-estimator' ), $weeks ),
+				/* translators: %d: number of roles */
+				sprintf( _n( '%d role', '%d roles', max( 1, count( $roles ) ), 'cybertech-estimator' ), max( 1, count( $roles ) ) )
 			),
 			'phases'      => self::phases( $line, $weeks, $roles ),
 			'assumptions' => self::assumptions( $line, $raw ),

@@ -192,10 +192,11 @@ final class ResponseValidator {
 	 * @param bool   $had_html Set to true when tags were found.
 	 */
 	private static function text( string $text, bool &$had_html ): string {
-		$stripped = wp_strip_all_tags( $text );
-		if ( $stripped !== $text ) {
+		if ( preg_match( '/<[a-zA-Z\/!][^>]*>/', $text ) ) {
 			$had_html = true;
+			// Detect tags before stripping: wp_strip_all_tags also trims, which is not "HTML".
 		}
+		$stripped = wp_strip_all_tags( $text );
 		return trim( (string) preg_replace( '/\s+/u', ' ', $stripped ) );
 	}
 

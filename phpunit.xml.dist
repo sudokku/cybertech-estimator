@@ -16,6 +16,7 @@
 			<directory suffix=".php">src/Engine</directory>
 			<directory suffix=".php">src/Ai</directory>
 			<directory suffix=".php">src/Security</directory>
+			<file>src/Frontend/RevealPolicy.php</file>
 		</include>
 	</source>
 </phpunit>
