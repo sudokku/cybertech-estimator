@@ -119,7 +119,7 @@ Team bands (`% of hours`, per service line, by total hours ≤120 / ≤400 / >40
 - design: pm 10/10/10 · design 70/65/60 · sse 5/10/15 · qa 5/5/5 · fe_junior 10/10/10 (be/devops 0)
 - ai: pm 12/12/15 · sse 40/35/30 · be 25/30/30 · devops 8/8/10 · qa 10/10/10 · fe_junior 0 · design 5/5/5
 
-Reveal `band` thresholds (on the range midpoint): Small < €10k · Mid-size €10k–€40k · Enterprise ≥ €40k.
+Reveal `band` thresholds (on the point price, before range rounding): Small < €10k · Mid-size €10k–€40k · Enterprise ≥ €40k.
 
 Budget bands (qualification only): `<5k · 5–15k · 15–40k · 40–100k · >100k · undisclosed`.
 

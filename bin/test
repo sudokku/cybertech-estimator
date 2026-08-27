@@ -7,4 +7,7 @@ PHP_BIN="${PHP_BIN:-$LOCAL_PHP}"
 [ -x "$PHP_BIN" ] || PHP_BIN=php
 MODE=off
 for a in "$@"; do case "$a" in --coverage*) MODE=coverage;; esac; done
-exec "$PHP_BIN" -d xdebug.mode=$MODE vendor/bin/phpunit "$@"
+LOCAL_INI="$HOME/Library/Application Support/Local/run/_JiKY9VLl/conf/php/php.ini"
+INI_ARGS=()
+[ -f "$LOCAL_INI" ] && [ "$PHP_BIN" = "$LOCAL_PHP" ] && INI_ARGS=(-c "$LOCAL_INI")
+exec "$PHP_BIN" "${INI_ARGS[@]}" -d xdebug.mode=$MODE vendor/bin/phpunit "$@"

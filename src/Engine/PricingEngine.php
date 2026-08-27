@@ -37,6 +37,13 @@ final class PricingEngine {
 	private Breakdown $breakdown;
 
 	/**
+	 * Urgency id after the unknown→normal fallback, shared with qualification.
+	 *
+	 * @var string
+	 */
+	private string $urgency = 'normal';
+
+	/**
 	 * Constructor.
 	 *
 	 * @param RateCard             $card    Rate card.
@@ -100,7 +107,8 @@ final class PricingEngine {
 			$urgency = 'normal';
 			$umult   = $this->card->get( 'urgency.normal', 1.0 );
 		}
-		$umult = (float) $umult;
+		$umult         = (float) $umult;
+		$this->urgency = $urgency;
 		$b->add( 'urgency', 'Urgency', $urgency, '× ' . $this->fmt( $umult ), $hours, $hours * $umult, "urgency.{$urgency}" );
 		$hours *= $umult;
 
@@ -249,7 +257,7 @@ final class PricingEngine {
 			$key = 'covers_high';
 		} elseif ( (float) $bmax >= $low ) {
 			$key = 'overlaps';
-		} elseif ( (float) $bmax >= $low / 2 ) {
+		} elseif ( (float) $bmax > $low / 2 ) { // Strictly less than 50% below the low end.
 			$key = 'below_within_half';
 		} else {
 			$key = 'far_below';
@@ -257,8 +265,8 @@ final class PricingEngine {
 		$parts['budget'] = (int) ( $q['budget'][ $key ] ?? 0 );
 		$b->add( 'qualification', 'Budget fit', $budget_id . ' → ' . $key, '+ ' . $parts['budget'], 0.0, (float) $parts['budget'], "qualification.budget.{$key}", 'pts' );
 
-		// Urgency.
-		$urgency          = (string) ( $this->answers['urgency'] ?? 'normal' );
+		// Urgency (same resolved value pricing used).
+		$urgency          = $this->urgency;
 		$parts['urgency'] = (int) ( $q['urgency'][ $urgency ] ?? 0 );
 		$b->add( 'qualification', 'Urgency signal', $urgency, '+ ' . $parts['urgency'], 0.0, (float) $parts['urgency'], "qualification.urgency.{$urgency}", 'pts' );
 
@@ -267,7 +275,7 @@ final class PricingEngine {
 		$scope_src      = '';
 		foreach ( (array) ( $q['scope'] ?? [] ) as $i => $row ) {
 			$max = $row['max_hours'] ?? null;
-			if ( null === $max || $hours <= (float) $max ) {
+			if ( null === $max || $hours < (float) $max ) { // Strict: a band's max_hours is exclusive ("<80h", "80–300").
 				$parts['scope'] = (int) $row['points'];
 				$scope_src      = "qualification.scope.{$i}.points";
 				break;
