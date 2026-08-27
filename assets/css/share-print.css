@@ -1,0 +1,306 @@
+/**
+ * Cybertech Project Estimator — share page, print / Save as PDF.
+ * White paper, black ink, no hero gradient, no buttons; the share URL is
+ * printed in the footer from its data attribute.
+ */
+
+@page {
+	margin: 16mm 14mm;
+}
+
+html,
+body {
+	background: #ffffff !important;
+	color: #000000 !important;
+}
+
+body {
+	font-size: 11pt;
+	line-height: 1.45;
+}
+
+.ct-share__skip,
+.ct-share__actions,
+.ct-share__cta,
+.ct-share__btn,
+.ct-share__status {
+	display: none !important;
+}
+
+.ct-share__container {
+	max-width: none;
+	padding: 0;
+}
+
+/* Hero → plain letterhead. */
+
+.ct-share__hero {
+	padding: 0 0 6mm;
+	margin-bottom: 6mm;
+	color: #000000;
+	background: none !important;
+	border-bottom: 1.5pt solid #000000;
+}
+
+.ct-share__hero::after {
+	display: none;
+}
+
+.ct-share__logo {
+	margin-bottom: 8mm;
+}
+
+.ct-share__logo img {
+	height: 22px;
+	filter: invert(1) grayscale(1); /* white wordmark → black on paper */
+}
+
+.ct-share__eyebrow,
+.ct-share__prepared,
+.ct-share__prepared strong,
+.ct-share__headline {
+	color: #000000;
+}
+
+.ct-share__headline {
+	font-size: 22pt;
+	max-width: none;
+}
+
+/* Summary card: flat, no overlap. */
+
+.ct-share__summary {
+	margin: 0 0 8mm;
+	padding: 5mm 0 0;
+	border: 0;
+	border-top: 0;
+	border-radius: 0;
+	background: none !important;
+	box-shadow: none;
+	break-inside: avoid;
+}
+
+.ct-share__summary::before {
+	display: none;
+}
+
+.ct-share__figures {
+	grid-template-columns: 2fr 1fr 1fr;
+	gap: 6mm;
+}
+
+.ct-share__figure {
+	border-left: 1.5pt solid #000000;
+}
+
+.ct-share__figure dt,
+.ct-share__unit,
+.ct-share__service,
+.ct-share__ref {
+	color: #333333;
+}
+
+.ct-share__figure-value,
+.ct-share__figure-value--band {
+	font-size: 18pt;
+	color: #000000;
+}
+
+.ct-share__chip {
+	border-color: #000000;
+	color: #000000;
+	background: none;
+}
+
+.ct-share__horizon {
+	display: none;
+}
+
+/* Sections. */
+
+.ct-share__section {
+	margin-bottom: 8mm;
+}
+
+.ct-share__h2 {
+	font-size: 13pt;
+	color: #000000;
+	break-after: avoid;
+}
+
+.ct-share__h2::after {
+	background: #000000;
+}
+
+.ct-share__h3,
+.ct-share__phase-name,
+.ct-share__lede,
+.ct-share__answer dd,
+.ct-share__list,
+.ct-share__table tbody th {
+	color: #000000;
+}
+
+.ct-share__lede {
+	font-size: 11pt;
+}
+
+.ct-share__lede--small,
+.ct-share__phase-desc,
+.ct-share__answer dt,
+.ct-share__pct,
+.ct-share__disclaimer,
+.ct-share__table thead th {
+	color: #333333;
+}
+
+/* Timeline: always the compact stepper on paper. */
+
+.ct-share__phases {
+	grid-template-columns: repeat(var(--ct-phases, 4), minmax(0, 1fr));
+	gap: 4mm;
+	break-inside: avoid;
+}
+
+.ct-share__phase {
+	grid-template-columns: minmax(0, 1fr);
+	gap: 0;
+	padding-top: 3mm;
+	break-inside: avoid;
+}
+
+.ct-share__phase::before {
+	top: 1.125rem;
+	bottom: auto;
+	left: 2.25rem;
+	right: -4mm;
+	width: auto;
+	height: 1pt;
+	background: #999999;
+}
+
+.ct-share__phase-dot {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #000000;
+	color: #ffffff;
+	box-shadow: 0 0 0 3px #ffffff;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+.ct-share__phase-body {
+	padding-top: 12mm;
+	padding-right: 2mm;
+}
+
+.ct-share__phase-weeks {
+	background: none;
+	color: #000000;
+	padding: 0;
+}
+
+.ct-share__chip--role {
+	border-color: #999999;
+	color: #333333;
+}
+
+/* Team. */
+
+.ct-share__table-wrap {
+	border-color: #000000;
+	overflow: visible;
+	break-inside: avoid;
+}
+
+.ct-share__table thead th {
+	background: none;
+	border-bottom: 1pt solid #000000;
+}
+
+.ct-share__table th,
+.ct-share__table td {
+	border-color: #cccccc;
+}
+
+.ct-share__bar {
+	background: #dddddd;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+.ct-share__bar::after {
+	background: #000000;
+}
+
+/* Answers, cards. */
+
+.ct-share__answers {
+	grid-template-columns: 1fr 1fr;
+	border-color: #000000;
+	break-inside: avoid;
+}
+
+.ct-share__answer {
+	border-color: #cccccc;
+}
+
+.ct-share__answer:nth-child(odd) {
+	border-right: 1px solid #cccccc;
+}
+
+.ct-share__answer:nth-last-child(2):nth-child(odd) {
+	border-bottom: 0;
+}
+
+.ct-share__cards {
+	grid-template-columns: 1fr 1fr;
+	break-inside: avoid;
+}
+
+.ct-share__card {
+	background: none;
+	border-color: #cccccc;
+	border-top: 1.5pt solid #000000;
+	break-inside: avoid;
+}
+
+.ct-share__list--assumptions li::marker,
+.ct-share__list--risks li::marker {
+	color: #000000;
+}
+
+.ct-share__disclaimer {
+	margin-bottom: 8mm;
+	border-color: #000000;
+}
+
+/* Footer with the share URL. */
+
+.ct-share__footer {
+	padding: 4mm 0 0;
+	border-top: 1pt solid #000000;
+	background: none;
+	color: #333333;
+	font-size: 8.5pt;
+}
+
+.ct-share__legal {
+	color: #000000;
+}
+
+.ct-share__url {
+	display: block;
+	margin: 1mm 0 0;
+	word-break: break-all;
+}
+
+.ct-share__url::before {
+	content: attr(data-url);
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+}

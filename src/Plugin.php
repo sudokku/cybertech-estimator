@@ -20,6 +20,7 @@ use Cybertech\Estimator\Privacy\DataEraser;
 use Cybertech\Estimator\Privacy\DataExporter;
 use Cybertech\Estimator\Privacy\RetentionCron;
 use Cybertech\Estimator\Admin\DemoSeeder;
+use Cybertech\Estimator\Frontend\SharePage;
 use Cybertech\Estimator\Rest\AdminAiController;
 use Cybertech\Estimator\Rest\NarrativeController;
 use Cybertech\Estimator\Rest\PreviewController;
@@ -100,6 +101,7 @@ final class Plugin {
 			WebhookDispatcher::class,
 			ElementorIntegration::class,
 			'Cybertech\\Estimator\\Frontend\\Shortcode',
+			SharePage::class,
 			// Admin pages (each registers its own submenu under the Estimator menu).
 			'Cybertech\\Estimator\\Admin\\RateCardPage',
 			'Cybertech\\Estimator\\Admin\\SandboxPage',

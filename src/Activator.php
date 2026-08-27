@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace Cybertech\Estimator;
 
+use Cybertech\Estimator\Frontend\SharePage;
 use Cybertech\Estimator\Lead\LeadPostType;
 
 /**
@@ -25,6 +26,7 @@ final class Activator {
 	 */
 	public static function activate(): void {
 		( new LeadPostType() )->register_post_type();
+		( new SharePage() )->add_rewrite_rule();
 		flush_rewrite_rules();
 		update_option( self::OPTION_VERSION, CT_EST_VERSION, false );
 	}

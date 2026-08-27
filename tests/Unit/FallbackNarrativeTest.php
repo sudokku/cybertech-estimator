@@ -100,7 +100,7 @@ final class FallbackNarrativeTest extends TestCase {
 		$this->assertSame( [], $result['warnings'], "{$line}/{$weeks}: fallback must be clean text" );
 		$this->assertFalse( ResponseValidator::contains_money( $json ) );
 		$this->assertStringContainsString( "{$weeks}-week", $narrative['headline'] );
-		$this->assertStringContainsString( "about {$weeks} weeks of work for a team of 7 roles", $narrative['summary'] );
+		$this->assertStringContainsString( 1 === $weeks ? "about 1 week of work for a team of 7 roles" : "about {$weeks} weeks of work for a team of 7 roles", $narrative['summary'] );
 		$this->assertStringContainsString( self::LABELS[ $line ], $narrative['summary'] );
 	}
 
