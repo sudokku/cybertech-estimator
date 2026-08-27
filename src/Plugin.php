@@ -15,6 +15,10 @@ namespace Cybertech\Estimator;
 use Cybertech\Estimator\Integration\MailNotifier;
 use Cybertech\Estimator\Integration\WebhookDispatcher;
 use Cybertech\Estimator\Lead\LeadPostType;
+use Cybertech\Estimator\Privacy\DataEraser;
+use Cybertech\Estimator\Privacy\DataExporter;
+use Cybertech\Estimator\Privacy\RetentionCron;
+use Cybertech\Estimator\Admin\DemoSeeder;
 use Cybertech\Estimator\Rest\AdminAiController;
 use Cybertech\Estimator\Rest\NarrativeController;
 use Cybertech\Estimator\Rest\PreviewController;
@@ -88,6 +92,10 @@ final class Plugin {
 			NarrativeController::class,
 			AdminAiController::class,
 			MailNotifier::class,
+			DataExporter::class,
+			DataEraser::class,
+			RetentionCron::class,
+			DemoSeeder::class,
 			WebhookDispatcher::class,
 			'Cybertech\\Estimator\\Frontend\\Shortcode',
 			// Admin pages (each registers its own submenu under the Estimator menu).
