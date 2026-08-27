@@ -16,6 +16,7 @@ use Cybertech\Estimator\Lead\LeadPostType;
 use Cybertech\Estimator\Rest\PreviewController;
 use Cybertech\Estimator\Rest\SandboxController;
 use Cybertech\Estimator\Rest\SubmitController;
+use Cybertech\Estimator\Rest\TokenController;
 
 /**
  * Plugin container.
@@ -79,6 +80,8 @@ final class Plugin {
 			SandboxController::class,
 			PreviewController::class,
 			SubmitController::class,
+			TokenController::class,
+			'Cybertech\\Estimator\\Frontend\\Shortcode',
 			// Admin pages (each registers its own submenu under the Estimator menu).
 			'Cybertech\\Estimator\\Admin\\RateCardPage',
 			'Cybertech\\Estimator\\Admin\\SandboxPage',
