@@ -1,0 +1,301 @@
+/**
+ * Settings admin page. Scoped under .ct-st so it never bleeds into the
+ * sibling rate-card / sandbox pages. The WP admin chrome (nav tabs,
+ * form-table, buttons) is left as-is; only the plugin-specific bits — status
+ * strip, cards, exchange dump, log — get styling.
+ */
+.ct-st {
+	--ct-primary: #1c67fa;
+	--ct-ink: #1f1f25;
+	--ct-body: #717173;
+	--ct-border: #e9e9e9;
+	--ct-surface: #f8f8f8;
+	--ct-green: #1a7f37;
+	--ct-green-bg: #e6f4ea;
+	--ct-amber: #b26a00;
+	--ct-red: #c62828;
+	--ct-red-bg: #fdecea;
+	--ct-radius: 5px;
+	max-width: 1100px;
+}
+
+.ct-st__tabs {
+	margin-bottom: 0;
+}
+
+.ct-st__panel {
+	padding-top: 4px;
+}
+
+.ct-st__panel h2 {
+	margin-top: 1.6em;
+}
+
+.ct-st-form > .form-table + h2 {
+	margin-top: 1em;
+}
+
+/* ---------- reveal-mode radios ---------- */
+
+.ct-st-radio {
+	display: flex;
+	gap: 8px;
+	align-items: flex-start;
+	margin: 0 0 10px;
+	max-width: 42em;
+}
+
+.ct-st-radio input {
+	margin-top: 3px;
+	flex: 0 0 auto;
+}
+
+.ct-st-radio__text .description {
+	display: block;
+	margin-top: 2px;
+}
+
+/* ---------- cards & notes ---------- */
+
+.ct-st-card {
+	background: #fff;
+	border: 1px solid var(--ct-border);
+	border-radius: var(--ct-radius);
+	padding: 4px 20px 16px;
+	margin: 20px 0;
+	max-width: 900px;
+}
+
+.ct-st-card h2 {
+	margin-top: 14px;
+}
+
+.ct-st-note {
+	border-left: 4px solid var(--ct-primary);
+	background: var(--ct-surface);
+	padding: 8px 14px;
+	margin: 12px 0;
+	max-width: 42em;
+	border-radius: 0 var(--ct-radius) var(--ct-radius) 0;
+}
+
+.ct-st-note p {
+	margin: 4px 0 0;
+}
+
+.ct-st-summary {
+	max-width: 520px;
+	margin: 12px 0;
+}
+
+.ct-st-summary th {
+	width: 40%;
+	font-weight: 600;
+}
+
+/* ---------- status strip (AI) ---------- */
+
+.ct-st-status {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 12px;
+	margin: 16px 0 4px;
+	max-width: 900px;
+}
+
+.ct-st-stat {
+	position: relative;
+	background: #fff;
+	border: 1px solid var(--ct-border);
+	border-left: 4px solid var(--ct-body);
+	border-radius: var(--ct-radius);
+	padding: 12px 14px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.ct-st-stat--ok {
+	border-left-color: var(--ct-green);
+}
+
+.ct-st-stat--bad {
+	border-left-color: var(--ct-red);
+}
+
+.ct-st-stat__label {
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--ct-body);
+}
+
+.ct-st-stat__value {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--ct-ink);
+}
+
+.ct-st-stat__meta {
+	font-size: 12px;
+	color: var(--ct-body);
+}
+
+.ct-st-stat__bar {
+	width: 100%;
+	height: 8px;
+	margin-top: 4px;
+}
+
+.ct-st-stat .ct-st-action {
+	margin-top: 6px;
+}
+
+/* ---------- badges / chips ---------- */
+
+.ct-st-badge {
+	display: inline-block;
+	padding: 1px 8px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 600;
+	vertical-align: middle;
+	line-height: 1.6;
+}
+
+.ct-st-badge--ok {
+	background: var(--ct-green-bg);
+	color: var(--ct-green);
+}
+
+.ct-st-badge--bad {
+	background: var(--ct-red-bg);
+	color: var(--ct-red);
+}
+
+.ct-st-chip {
+	display: inline-block;
+	padding: 0 6px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-family: Menlo, Consolas, monospace;
+	background: var(--ct-surface);
+	border: 1px solid var(--ct-border);
+}
+
+.ct-st-chip--webhook {
+	color: var(--ct-primary);
+}
+
+.ct-st-chip--security {
+	color: var(--ct-amber);
+}
+
+.ct-st-chip--ai {
+	color: #6a1b9a;
+}
+
+.ct-st-chip--mail {
+	color: var(--ct-green);
+}
+
+/* ---------- action buttons (admin-post mini forms) ---------- */
+
+.ct-st-action {
+	display: inline-block;
+	margin: 0;
+}
+
+.ct-st-actions {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.ct-st-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin-top: 1.4em;
+}
+
+.ct-st-toolbar h2 {
+	margin: 0;
+}
+
+/* ---------- webhook exchange + snippet ---------- */
+
+.ct-st-exchange {
+	margin-top: 14px;
+}
+
+.ct-st-exchange h3 {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 14px 0 6px;
+	font-size: 13px;
+}
+
+.ct-st-exchange h3 code {
+	font-weight: 400;
+}
+
+.ct-st-pre {
+	background: var(--ct-ink);
+	color: #e8e8ec;
+	padding: 10px 12px;
+	border-radius: var(--ct-radius);
+	font-size: 12px;
+	line-height: 1.5;
+	max-height: 360px;
+	overflow: auto;
+	white-space: pre-wrap;
+	word-break: break-word;
+	margin: 6px 0;
+}
+
+.ct-st-pre--error {
+	background: var(--ct-red-bg);
+	color: var(--ct-red);
+}
+
+.ct-st-details summary {
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 10px 0;
+}
+
+/* ---------- models datalist status ---------- */
+
+#ct-est-models-status.is-error {
+	color: var(--ct-red);
+}
+
+#ct-est-models-status.is-ok {
+	color: var(--ct-green);
+}
+
+/* ---------- log ---------- */
+
+.ct-st-log {
+	margin-top: 10px;
+}
+
+.ct-st-log__time {
+	white-space: nowrap;
+	width: 150px;
+}
+
+.ct-st-log__context {
+	font-size: 11px;
+	word-break: break-all;
+	background: transparent;
+}
+
+@media (max-width: 782px) {
+	.ct-st-log__time {
+		width: auto;
+	}
+}
