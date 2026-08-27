@@ -1,0 +1,3861 @@
+# Copyright (C) 2026 Radu Chirilov
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Cybertech Project Estimator 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/sudokku/cybertech-estimator/issues\n"
+"Last-Translator: Radu Chirilov\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-08-27T15:40:53+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: cybertech-estimator\n"
+
+#. Plugin Name of the plugin
+#: cybertech-estimator.php
+msgid "Cybertech Project Estimator"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: cybertech-estimator.php
+msgid "https://github.com/sudokku/cybertech-estimator"
+msgstr ""
+
+#. Description of the plugin
+#: cybertech-estimator.php
+msgid "Interactive project estimator: a guided questionnaire that prices Web, Mobile, UI/UX and AI Automation projects from an editable rate card, captures qualified leads and produces a shareable estimate page."
+msgstr ""
+
+#. Author of the plugin
+#: cybertech-estimator.php
+msgid "Radu Chirilov"
+msgstr ""
+
+#. Author URI of the plugin
+#: cybertech-estimator.php
+msgid "https://github.com/sudokku"
+msgstr ""
+
+#. translators: 1: minimum PHP version, 2: minimum WordPress version
+#: cybertech-estimator.php:54
+#, php-format
+msgid "Cybertech Project Estimator requires PHP %1$s+ and WordPress %2$s+. The plugin is inactive."
+msgstr ""
+
+#: src/Admin/DemoSeeder.php:369
+msgid "You are not allowed to do this."
+msgstr ""
+
+#: src/Admin/LeadColumns.php:95
+msgid "Saving…"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:96
+msgid "Saved"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:97
+msgid "Could not save"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:98
+msgid "Copied"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:99
+msgid "Copy failed"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:116
+#: src/Lead/LeadPostType.php:57
+msgid "Lead"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:117
+#: templates/email/sales-notification.php:42
+#: templates/email/sales-notification.txt.php:20
+msgid "Contact"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:118
+#: src/Admin/LeadMetaBoxes.php:228
+#: src/Engine/Questionnaire.php:46
+msgid "Service line"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:119
+#: src/Admin/LeadMetaBoxes.php:54
+#: src/Privacy/DataExporter.php:87
+msgid "Estimate"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:120
+#: src/Admin/LeadMetaBoxes.php:230
+#: src/Admin/SandboxPage.php:200
+msgid "Weeks"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:121
+#: src/Admin/LeadMetaBoxes.php:234
+msgid "Score"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:122
+#: src/Admin/LeadMetaBoxes.php:325
+msgid "Status"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:123
+#: src/Admin/SandboxPage.php:629
+#: src/Admin/SettingsPage.php:634
+msgid "AI"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:124
+#: src/Admin/LeadMetaBoxes.php:262
+#: templates/share/estimate.php:182
+msgid "Share"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:125
+msgid "Date"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:195
+#: src/Admin/LeadMetaBoxes.php:301
+msgid "Anonymised"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:224
+msgid "Pipeline status"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:246
+#: src/Admin/LeadMetaBoxes.php:353
+msgid "Disabled"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:247
+#: src/Admin/LeadMetaBoxes.php:354
+msgid "Expired"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:248
+msgid "No link"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:253
+#: src/Admin/LeadMetaBoxes.php:368
+#: src/Frontend/Assets.php:206
+#: templates/share/estimate.php:112
+#: templates/wizard/result.php:93
+msgid "Copy link"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:256
+msgid "Open the public estimate page"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:258
+#: src/Admin/LeadMetaBoxes.php:370
+#: src/Admin/SandboxPage.php:666
+#: src/Admin/SettingsPage.php:828
+msgid "Open"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:285
+msgid "Qualification score out of 100"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:297
+#: src/Admin/LeadMetaBoxes.php:292
+#: src/Engine/Questionnaire.php:282
+#: src/Engine/Questionnaire.php:613
+msgid "Yes"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:298
+msgid "Fallback"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:299
+msgid "Pending"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:334
+msgid "All service lines"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:335
+msgid "All statuses"
+msgstr ""
+
+#: src/Admin/LeadColumns.php:447
+msgid "Mark as contacted"
+msgstr ""
+
+#. translators: %s: number of leads
+#: src/Admin/LeadColumns.php:493
+#, php-format
+msgid "%s lead marked as contacted."
+msgid_plural "%s leads marked as contacted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/LeadColumns.php:521
+#: src/Admin/LeadMetaBoxes.php:137
+msgid "Unknown lead."
+msgstr ""
+
+#: src/Admin/LeadColumns.php:524
+#: src/Admin/LeadMetaBoxes.php:141
+msgid "You are not allowed to edit this lead."
+msgstr ""
+
+#: src/Admin/LeadColumns.php:528
+msgid "Unknown status."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:55
+#: templates/email/sales-notification.php:56
+#: templates/email/sales-notification.txt.php:26
+msgid "Answers"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:56
+#: templates/email/sales-notification.php:63
+#: templates/email/sales-notification.txt.php:30
+msgid "Calculation breakdown"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:57
+msgid "AI narrative"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:58
+msgid "Webhook log"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:59
+msgid "Snapshot"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:60
+msgid "Pipeline"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:61
+msgid "Contact & consent"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:62
+#: src/Privacy/DataExporter.php:108
+msgid "Share link"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:169
+msgid "Webhook delivered."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:170
+msgid "Webhook attempt failed — see the log below. Retries are scheduled as usual."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:171
+msgid "No webhook URL is configured in Estimator → Settings → Integrations."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:172
+msgid "This lead has no usable snapshot, so no payload could be built."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:191
+msgid "No estimate snapshot on this lead."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:201
+#: src/Admin/RateCardPage.php:1116
+msgid "Budget fit"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:202
+#: src/Admin/RateCardPage.php:904
+#: src/Admin/RateCardPage.php:1287
+msgid "Urgency"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:203
+msgid "Scope size"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:204
+#: src/Admin/SandboxPage.php:201
+msgid "Description"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:205
+msgid "Maintenance"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:206
+msgid "Hosting"
+msgstr ""
+
+#. translators: %s: rate-card version number
+#: src/Admin/LeadMetaBoxes.php:213
+#: src/Admin/SandboxPage.php:166
+#: src/Admin/SandboxPage.php:377
+#, php-format
+msgid "Rate card v%s"
+msgstr ""
+
+#. translators: %s: current rate-card version number
+#: src/Admin/LeadMetaBoxes.php:220
+#, php-format
+msgid "superseded — current is v%s"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:227
+#: src/Admin/SandboxPage.php:423
+msgid "Range"
+msgstr ""
+
+#. translators: %d: weeks
+#: src/Admin/LeadMetaBoxes.php:229
+#: src/Admin/LeadMetaBoxes.php:261
+#: src/Admin/SandboxPage.php:422
+#: templates/email/sales-notification.php:36
+#: templates/email/sales-notification.txt.php:17
+#: templates/share/estimate.php:181
+msgid "Hours"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:231
+#: src/Admin/RateCardPage.php:955
+#: src/Admin/SandboxPage.php:425
+#: src/Admin/SandboxPage.php:667
+#: src/Admin/SettingsPage.php:832
+#: templates/email/sales-notification.php:37
+#: templates/email/sales-notification.txt.php:18
+msgid "Band"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:232
+msgid "Effective rate"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:233
+msgid "Point price"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:239
+msgid "Score parts"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:249
+msgid "Total"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:256
+#: templates/share/estimate.php:102
+#: templates/share/estimate.php:165
+msgid "Team"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:260
+#: src/Admin/RateCardPage.php:730
+#: templates/share/estimate.php:180
+msgid "Role"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:263
+msgid "Rate"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:293
+#: src/Engine/Questionnaire.php:282
+#: src/Engine/Questionnaire.php:612
+msgid "No"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:295
+#: src/Privacy/DataExporter.php:69
+#: templates/email/sales-notification.php:44
+msgid "Name"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:296
+#: src/Privacy/DataExporter.php:73
+#: templates/email/sales-notification.php:45
+msgid "Email"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:297
+#: src/Engine/Questionnaire.php:155
+#: src/Privacy/DataExporter.php:77
+#: templates/email/sales-notification.php:49
+msgid "Company"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:298
+#: src/Engine/Questionnaire.php:163
+#: src/Privacy/DataExporter.php:81
+#: templates/email/sales-notification.php:53
+msgid "Phone"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:303
+#: src/Privacy/DataExporter.php:103
+msgid "Consent"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:304
+msgid "Consent version"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:305
+msgid "Consented at"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:306
+msgid "Locale"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:307
+#: src/Admin/SettingsPage.php:845
+#: src/Admin/SettingsPage.php:848
+#: src/Integration/ElementorWidget.php:97
+msgid "Reveal mode"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:309
+msgid "Hashed IP stored"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:333
+msgid "Internal notes"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:334
+msgid "Call notes, next steps… never shown to the visitor."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:352
+msgid "Active"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:355
+msgid "No token"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:377
+msgid "Link enabled"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:381
+msgid "Expires on"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:383
+msgid "Empty = never expires."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:396
+msgid "No answers stored."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:419
+msgid "No breakdown stored."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:424
+msgid "Every step the engine took when this lead was quoted. Values are from the snapshot, never recomputed. Source links open the current rate card — which may have changed since."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:429
+#: templates/email/sales-notification.php:65
+msgid "Step"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:430
+#: src/Admin/RateCardPage.php:766
+#: src/Admin/RateCardPage.php:836
+#: src/Admin/RateCardPage.php:1025
+#: src/Admin/SandboxPage.php:730
+msgid "Label"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:431
+#: src/Admin/SandboxPage.php:731
+#: templates/email/sales-notification.php:65
+msgid "Input"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:432
+#: src/Admin/SandboxPage.php:732
+#: templates/email/sales-notification.php:65
+msgid "Operation"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:433
+#: src/Admin/SandboxPage.php:733
+#: templates/email/sales-notification.php:65
+msgid "Before"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:434
+#: src/Admin/SandboxPage.php:734
+#: templates/email/sales-notification.php:65
+msgid "After"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:435
+#: src/Admin/SandboxPage.php:205
+#: src/Admin/SandboxPage.php:735
+msgid "Source"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:454
+#: src/Admin/SandboxPage.php:169
+msgid "Open this value in the rate card"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:487
+msgid "Not generated."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:491
+msgid "Headline"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:492
+#: templates/share/estimate.php:123
+msgid "Summary"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:493
+#: src/Admin/SandboxPage.php:198
+msgid "Phases"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:494
+#: src/Admin/SandboxPage.php:203
+#: src/Frontend/Assets.php:230
+#: templates/share/estimate.php:231
+msgid "Assumptions"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:495
+#: src/Admin/SandboxPage.php:204
+#: templates/share/estimate.php:241
+msgid "Risks"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:507
+msgid "Other fields"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:555
+msgid "No webhook attempts yet."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:563
+msgid "When"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:564
+msgid "Result"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:565
+msgid "HTTP"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:566
+msgid "Error / body"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:579
+msgid "Delivered"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:579
+msgid "Failed"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:601
+msgid "Resend webhook"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:604
+msgid "No webhook URL configured."
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:619
+msgid "Rate card snapshot"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:620
+msgid "Raw answers"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:690
+#: src/Admin/SandboxPage.php:240
+msgid "1 · Base hours"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:691
+#: src/Admin/SandboxPage.php:241
+msgid "2 · Additive hours"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:692
+#: src/Admin/SandboxPage.php:242
+msgid "3 · Multipliers"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:693
+#: src/Admin/SandboxPage.php:243
+msgid "4 · Urgency"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:694
+#: src/Admin/SandboxPage.php:244
+msgid "5 · Contingency"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:695
+#: src/Admin/SandboxPage.php:245
+msgid "6 · Minimum hours"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:696
+#: src/Admin/SandboxPage.php:246
+msgid "7 · Team allocation"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:697
+#: src/Admin/SandboxPage.php:247
+msgid "7 · Effective rate"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:698
+#: src/Admin/SandboxPage.php:248
+msgid "7 · Price"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:699
+#: src/Admin/SandboxPage.php:249
+msgid "8 · Additive price"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:700
+#: src/Admin/SandboxPage.php:250
+msgid "9 · Range"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:701
+#: src/Admin/SandboxPage.php:251
+msgid "10 · Duration"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:702
+#: src/Admin/SandboxPage.php:252
+msgid "11 · Reveal band"
+msgstr ""
+
+#: src/Admin/LeadMetaBoxes.php:703
+msgid "12 · Qualification"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:90
+#: src/Admin/RateCardPage.php:91
+#: src/Admin/RateCardPage.php:554
+#: src/Admin/SettingsPage.php:911
+msgid "Rate card"
+msgstr ""
+
+#. translators: %d: new version number
+#: src/Admin/RateCardPage.php:146
+#, php-format
+msgid "Rate card saved as v%d."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:159
+msgid "No file was uploaded."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:162
+msgid "The file is too large to be a rate card."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:167
+msgid "The file is not a JSON object."
+msgstr ""
+
+#. translators: %d: new version number
+#: src/Admin/RateCardPage.php:170
+#, php-format
+msgid "Rate card imported and saved as v%d."
+msgstr ""
+
+#. translators: %d: new version number
+#: src/Admin/RateCardPage.php:180
+#, php-format
+msgid "Rate card reset to defaults, saved as v%d."
+msgstr ""
+
+#. translators: 1: rolled-back version number, 2: new version number
+#: src/Admin/RateCardPage.php:192
+#, php-format
+msgid "Rolled back to v%1$d, saved as v%2$d."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:218
+#: src/Admin/RateCardPage.php:540
+msgid "You are not allowed to edit the rate card."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:245
+msgid "The rate card was not saved. Fix the problems below and try again."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:259
+msgid "The operation failed."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:519
+msgid "Recalculating…"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:520
+msgid "Effects reflect your unsaved changes."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:521
+msgid "Cannot price the card as edited:"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:522
+msgid "The estimate request failed. Check your connection and try again."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:523
+#: src/Admin/RateCardPage.php:1486
+msgid "= sample"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:524
+msgid "Identical to the current card."
+msgstr ""
+
+#. translators: %d: number of changed values
+#: src/Admin/RateCardPage.php:526
+#, php-format
+msgid "%d changed value(s) vs the current card:"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:527
+msgctxt "hours abbreviation"
+msgid "h"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:528
+msgctxt "weeks abbreviation"
+msgid "wk"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:555
+msgid "Current saved version"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:557
+msgid "Showing your unsaved draft"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:579
+#: src/Admin/RateCardPage.php:1247
+msgid "Save rate card"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:602
+msgid "Sample projects"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:608
+msgid "sample project"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:608
+msgid "branch sample"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:629
+#: src/Admin/RateCardPage.php:1283
+#: src/Admin/SettingsPage.php:632
+msgid "General"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:633
+#: src/Admin/SettingsPage.php:906
+msgid "Currency"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:645
+msgid "ISO code (EUR, RON, USD). Prices are formatted with the symbol when one is known."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:648
+msgid "Blended hourly rate"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:650
+msgid "Fallback when a role has no rate of its own."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:653
+msgid "Contingency"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:664
+msgid "Fraction added to hours after urgency (0.10 = +10%)."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:667
+msgid "Range spread"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:679
+msgid "Low/high = price × (1 ∓ spread). Must be below 1."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:682
+msgid "Rounding"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:684
+msgid "Threshold"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:686
+msgid "Increment below"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:688
+msgid "Increment from threshold"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:691
+msgid "Range ends are rounded to the nearest increment."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:694
+msgid "Weekly capacity (hours)"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:696
+msgid "Team hours delivered per week; drives the duration."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:699
+msgid "Minimum weeks"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:725
+#: src/Admin/RateCardPage.php:1284
+msgid "Role rates"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:725
+msgid "Hourly rate per role. The effective project rate is the share-weighted mix from the team band."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:731
+#: src/Admin/RateCardPage.php:765
+#: src/Admin/RateCardPage.php:910
+#: src/Admin/RateCardPage.php:1024
+#: src/Admin/RateCardPage.php:1074
+msgid "Id"
+msgstr ""
+
+#. translators: %s: currency code
+#: src/Admin/RateCardPage.php:735
+#, php-format
+msgid "Rate (%s/h)"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:760
+#: src/Admin/RateCardPage.php:1285
+msgid "Service lines"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:760
+msgid "Base hours start every estimate in the line; min hours is the floor after contingency."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:767
+msgid "Base hours"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:768
+msgid "Min hours"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:802
+msgid "Add hours"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:803
+#: src/Admin/RateCardPage.php:911
+msgid "Multiplier"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:804
+msgid "Add price"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:807
+#: src/Admin/RateCardPage.php:1286
+msgid "Factors"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:807
+msgid "Applied in order: add-hours factors first, then multipliers, then urgency and contingency; add-price factors after the hourly price. Lower order runs first. Per-unit factors multiply the value by the numeric answer."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:812
+msgid "Factor"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:813
+msgid "Type"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:814
+msgid "Value"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:815
+#: src/Admin/RateCardPage.php:866
+msgid "Per unit"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:816
+msgid "Order"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:817
+msgid "Applies to"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:818
+msgid "Effect on the sample project"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:847
+msgid "Note (why this costs what it costs)"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:848
+msgid "Note"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:904
+msgid "Multiplies the hours after all factors."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:909
+#: src/Engine/Questionnaire.php:68
+#: src/Frontend/Assets.php:196
+#: templates/share/estimate.php:95
+#: templates/share/estimate.php:130
+#: templates/wizard/result.php:60
+msgid "Timeline"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:948
+#: src/Admin/RateCardPage.php:1288
+msgid "Team bands"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:948
+msgid "Role shares (%) by total hours. The first band whose max hours covers the estimate is used; leave max empty for the open-ended last band. Shares must sum to 100."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:956
+msgid "Max hours"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:960
+msgid "Sum"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1019
+#: src/Admin/RateCardPage.php:1289
+msgid "Reveal bands"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1019
+msgid "In \"band\" reveal mode the visitor sees the first band whose max price is above the point price. Leave the last max empty."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1026
+#: src/Admin/SettingsPage.php:978
+msgid "Max price"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1068
+#: src/Admin/RateCardPage.php:1290
+msgid "Budget bands"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1068
+msgid "What each budget answer means in money, for the qualification score. Empty = unbounded / undisclosed."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1073
+msgid "Answer"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1075
+msgid "Min"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1076
+msgid "Max"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1102
+msgid "Budget covers the high end"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1103
+msgid "Budget overlaps the range"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1104
+msgid "Below the low end by less than half"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1105
+msgid "Far below"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1106
+msgid "Undisclosed"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1112
+msgid "Qualification weights"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1112
+msgid "Points per signal; the lead score is their sum, capped at 100. Admin-only, never shown to visitors."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1128
+msgid "Urgency signal"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1142
+msgid "Scope: up to hours"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1143
+msgid "Points"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1168
+msgid "Other signals"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1171
+msgid "Description: minimum characters"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1186
+msgid "Description: points"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1190
+msgid "Maintenance interest: points"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1194
+msgid "Hosting with us: points"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1198
+msgid "Green from"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1214
+msgid "Amber from"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1245
+msgid "Actions"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1249
+msgid "Saving creates a new version; older leads keep the card they were priced with."
+msgstr ""
+
+#. translators: %d: version number
+#: src/Admin/RateCardPage.php:1255
+#, php-format
+msgid "Export JSON (v%d)"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1263
+msgid "Import JSON"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1265
+msgid "Import and save"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1266
+msgid "The file is validated before it replaces the current card."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1269
+msgid "Reset every coefficient to the shipped defaults? The current card stays in the history."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1272
+#: src/Admin/SandboxPage.php:399
+msgid "Reset to defaults"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1291
+#: src/Admin/SandboxPage.php:426
+#: templates/email/sales-notification.php:38
+#: templates/email/sales-notification.txt.php:19
+msgid "Qualification"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1294
+#: src/Admin/RateCardPage.php:1295
+msgid "Sections"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1312
+msgid "Version history"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1314
+msgid "No earlier versions yet. The first save will record the current card here."
+msgstr ""
+
+#. translators: %d: version number
+#: src/Admin/RateCardPage.php:1323
+#, php-format
+msgid "Roll back to v%d? It will be saved as a new version."
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1329
+msgid "unknown user"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1332
+msgid "Diff vs current"
+msgstr ""
+
+#: src/Admin/RateCardPage.php:1337
+msgid "Roll back"
+msgstr ""
+
+#. translators: %s: number of hours
+#. translators: %s: hours
+#: src/Admin/RateCardPage.php:1529
+#: src/Admin/SandboxPage.php:160
+#, php-format
+msgid "%s h"
+msgstr ""
+
+#. translators: %d: number of weeks
+#: src/Admin/RateCardPage.php:1539
+#, php-format
+msgid "%d wk"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:61
+msgid "Estimator sandbox"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:62
+#: src/Admin/SandboxPage.php:373
+msgid "Sandbox"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:154
+msgid "Estimating…"
+msgstr ""
+
+#. translators: %s: error message
+#: src/Admin/SandboxPage.php:156
+#, php-format
+msgid "Estimate failed: %s"
+msgstr ""
+
+#. translators: %s: number of weeks
+#: src/Admin/SandboxPage.php:158
+#, php-format
+msgid "%s weeks"
+msgstr ""
+
+#. translators: %s: points
+#: src/Admin/SandboxPage.php:162
+#, php-format
+msgid "%s pts"
+msgstr ""
+
+#. translators: %s: score out of 100
+#: src/Admin/SandboxPage.php:164
+#, php-format
+msgid "%s / 100"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:167
+msgid "Copied to clipboard."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:168
+msgid "Copy failed — select the text manually."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:170
+msgid "Derived value — not a rate-card field"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:183
+msgid "Narrating…"
+msgstr ""
+
+#. translators: %s: error message
+#: src/Admin/SandboxPage.php:185
+#, php-format
+msgid "Narration failed: %s"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:186
+msgid "System prompt"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:187
+msgid "User prompt"
+msgstr ""
+
+#. translators: %s: comma-separated pattern ids
+#: src/Admin/SandboxPage.php:189
+#, php-format
+msgid "injection markers stripped: %s"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:190
+msgid "No raw response — the provider was not called."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:191
+msgid "Raw model content"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:192
+msgid "Rendered narrative"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:193
+msgid "Fallback (PHP template)"
+msgstr ""
+
+#. translators: %s: model id
+#: src/Admin/SandboxPage.php:195
+#, php-format
+msgid "AI (%s)"
+msgstr ""
+
+#. translators: %s: model id
+#: src/Admin/SandboxPage.php:197
+#, php-format
+msgid "Cache (%s)"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:199
+msgid "Phase"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:202
+msgid "Roles"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:206
+msgid "Reason"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:207
+#: src/Admin/SettingsPage.php:960
+msgid "Model"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:208
+msgid "Latency"
+msgstr ""
+
+#. translators: %s: milliseconds
+#: src/Admin/SandboxPage.php:210
+#, php-format
+msgid "%s ms"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:211
+msgid "Tokens (prompt / completion)"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:212
+msgid "Cost"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:213
+msgid "Validation"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:214
+msgid "ok"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:215
+msgid "not run"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:216
+msgid "Errors"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:217
+msgid "Warnings"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:218
+#: src/Admin/SettingsPage.php:1056
+msgid "Circuit breaker"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:219
+msgid "closed"
+msgstr ""
+
+#. translators: 1: date-time, 2: failure count
+#: src/Admin/SandboxPage.php:221
+#, php-format
+msgid "open until %1$s (%2$s failures)"
+msgstr ""
+
+#. translators: %s: failure count
+#: src/Admin/SandboxPage.php:223
+#, php-format
+msgid "closed (%s recent failures)"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:224
+msgid "Month spend"
+msgstr ""
+
+#. translators: %s: cents
+#: src/Admin/SandboxPage.php:226
+#, php-format
+msgid "%s ¢"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:227
+msgid "Cache key"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:228
+msgid "Provider error"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:229
+msgid "—"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:253
+msgid "12 · Qualification (admin-only)"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:267
+msgid "Web — bilingual WooCommerce shop with migration"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:285
+msgid "Mobile — Flutter delivery app, both stores, new backend"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:304
+msgid "UI/UX — SaaS dashboard redesign, 25 screens"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:319
+msgid "AI — support automation with voice agent"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:366
+msgid "You do not have permission to use the sandbox."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:380
+msgid "Answer as a visitor would and watch the engine price it. Nothing here is stored — no lead is created and no e-mail is sent."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:389
+msgid "Questionnaire"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:391
+msgid "Preset"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:393
+msgid "— choose —"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:408
+msgid "Engine output"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:424
+#: src/Privacy/DataExporter.php:91
+#: templates/email/sales-notification.php:35
+#: templates/email/sales-notification.txt.php:16
+msgid "Duration"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:454
+msgid "Not used for pricing — shown so the sandbox mirrors the full wizard."
+msgstr ""
+
+#. translators: 1: minimum, 2: maximum
+#: src/Admin/SandboxPage.php:564
+#, php-format
+msgid "%1$s – %2$s"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:626
+msgid "Visitor view"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:627
+msgid "Breakdown"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:628
+msgid "Result JSON"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:632
+msgid "Result views"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:648
+msgid "The exact object the engine returns — what gets snapshotted on a lead."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:649
+msgid "Copy JSON"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:666
+msgid "Range, duration and team shown right away."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:667
+msgid "Engagement size and duration; no figures anywhere."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:668
+#: src/Admin/SettingsPage.php:836
+msgid "Gated"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:668
+msgid "Blurred card until the visitor leaves an e-mail."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:679
+#: src/Admin/SandboxPage.php:702
+#: src/Frontend/Assets.php:191
+#: templates/wizard/result.php:29
+msgid "Your estimate"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:681
+#: src/Frontend/Assets.php:197
+#: src/Privacy/DataExporter.php:92
+msgid "weeks"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:685
+#: src/Frontend/Assets.php:227
+#: templates/wizard/result.php:29
+msgid "Your estimate is ready"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:686
+msgid "Enter your email to reveal"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:688
+msgid "Work email (preview only)"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:690
+msgid "Reveal"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:695
+msgid "Your project looks like a"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:698
+msgid "We’ll send a detailed proposal with figures by e-mail."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:705
+#: src/Frontend/Assets.php:199
+#: templates/wizard/result.php:72
+msgid "Suggested team"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:714
+msgid "What the visitor told us"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:725
+msgid "Every step the engine took, in order. Rows driven by a rate-card value link to that field."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:751
+msgid "Prompt that would be sent"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:752
+msgid "Raw response"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:753
+msgid "Validation verdict · latency · tokens · cost"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:758
+msgid "Runs the full narration pipeline for the current answers: prompt guard, provider call (or fallback), validation, cache."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:762
+msgid "Force fallback"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:766
+msgid "Use cache"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:768
+msgid "Run narration"
+msgstr ""
+
+#. translators: %s: link to Settings → AI
+#: src/Admin/SandboxPage.php:775
+#, php-format
+msgid "A tripped circuit breaker keeps returning the fallback; reset it under %s."
+msgstr ""
+
+#: src/Admin/SandboxPage.php:776
+msgid "Settings → AI"
+msgstr ""
+
+#: src/Admin/SandboxPage.php:784
+msgid "Press “Run narration” to populate."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:89
+#: src/Admin/SettingsPage.php:90
+msgid "Settings"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:138
+msgid "Fetching models…"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:139
+msgid "Available once the AI layer lands (Phase 4)."
+msgstr ""
+
+#. translators: %s: error detail
+#: src/Admin/SettingsPage.php:141
+#, php-format
+msgid "Could not fetch the model list: %s"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:142
+msgid "The provider returned no models."
+msgstr ""
+
+#. translators: %d: number of models
+#: src/Admin/SettingsPage.php:144
+#, php-format
+msgid "%d models loaded. Start typing in the model field to pick one."
+msgstr ""
+
+#. translators: %s: model slug
+#: src/Admin/SettingsPage.php:146
+#, php-format
+msgid "Suggested a free model: %s. Free slugs are rate-limited — use a paid one in production."
+msgstr ""
+
+#. translators: 1: prompt price, 2: completion price, both USD per 1M tokens
+#: src/Admin/SettingsPage.php:148
+#, php-format
+msgid "$%1$s in / $%2$s out per 1M"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:149
+msgid "free"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:150
+#: src/Admin/SettingsPage.php:1060
+msgid "Open — calls paused"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:151
+#: src/Admin/SettingsPage.php:1062
+msgid "Closed — healthy"
+msgstr ""
+
+#. translators: %d: consecutive failures
+#: src/Admin/SettingsPage.php:153
+#: src/Admin/SettingsPage.php:1073
+#, php-format
+msgid "%d consecutive failure(s) recorded."
+msgstr ""
+
+#. translators: 1: spent USD, 2: budget USD, 3: percent
+#: src/Admin/SettingsPage.php:155
+#: src/Admin/SettingsPage.php:1094
+#, php-format
+msgid "$%1$s of $%2$s (%3$d%%)"
+msgstr ""
+
+#. translators: %s: spent USD
+#: src/Admin/SettingsPage.php:157
+#: src/Admin/SettingsPage.php:1097
+#, php-format
+msgid "$%s (no budget)"
+msgstr ""
+
+#. translators: %d: number of leads
+#: src/Admin/SettingsPage.php:189
+#, php-format
+msgid "%d demo lead created."
+msgid_plural "%d demo leads created."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of leads
+#: src/Admin/SettingsPage.php:192
+#, php-format
+msgid "%d demo lead removed."
+msgid_plural "%d demo leads removed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/SettingsPage.php:263
+msgid "Contact page must be an http(s) URL. The previous value was kept."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:314
+msgid "Sales e-mail is not a valid address. The previous value was kept."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:326
+msgid "Webhook URL must use https:// (plain http:// is only allowed for 127.0.0.1 / localhost). The previous value was kept."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:426
+msgid "OpenRouter"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:427
+#: src/Ai/NullProvider.php:29
+msgid "None (fallback text only)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:442
+msgid "No valid sales e-mail is configured."
+msgstr ""
+
+#. translators: %s: site name
+#: src/Admin/SettingsPage.php:446
+#, php-format
+msgid "[%s] Estimator test e-mail"
+msgstr ""
+
+#. translators: 1: site URL, 2: date/time
+#: src/Admin/SettingsPage.php:451
+#, php-format
+msgid ""
+"This is a test message from the Cybertech Project Estimator plugin on %1$s.\n"
+"\n"
+"Sent: %2$s\n"
+"\n"
+"If you can read this, lead notifications will reach this inbox."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:458
+msgid "wp_mail() reported a failure. Check your SMTP configuration."
+msgstr ""
+
+#. translators: %s: e-mail address
+#: src/Admin/SettingsPage.php:461
+#, php-format
+msgid "Test e-mail sent to %s."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:472
+msgid "Save a webhook URL first."
+msgstr ""
+
+#. translators: %d: HTTP status code
+#: src/Admin/SettingsPage.php:487
+#, php-format
+msgid "Webhook accepted the test payload (HTTP %d)."
+msgstr ""
+
+#. translators: %s: transport error message
+#: src/Admin/SettingsPage.php:492
+#, php-format
+msgid "Webhook request failed: %s"
+msgstr ""
+
+#. translators: %d: HTTP status code
+#: src/Admin/SettingsPage.php:494
+#, php-format
+msgid "Webhook rejected the test payload (HTTP %d)."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:510
+msgid "Circuit breaker reset. AI calls will be attempted again."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:519
+msgid "Log cleared."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:531
+#: src/Admin/SettingsPage.php:656
+msgid "You are not allowed to change these settings."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:633
+msgid "Pricing"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:635
+msgid "Notifications"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:636
+msgid "Integrations"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:637
+msgid "Privacy"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:638
+msgid "Diagnostics"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:662
+msgid "Estimator settings"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:667
+msgid "Settings sections"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:790
+msgid "Not set"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:793
+msgid "Set"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:794
+msgid "Clear the stored value on save"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:829
+msgid "The full price range and breakdown are shown as soon as the questionnaire is complete. Contact details are optional."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:833
+msgid "Only the price band (e.g. \"mid-size engagement\") is shown; exact figures unlock after contact details are submitted."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:837
+msgid "Figures never leave the server before contact details are submitted — the preview endpoint returns no numbers at all."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:842
+msgid "Estimate reveal"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:860
+msgid "Share link validity"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:862
+#: src/Admin/SettingsPage.php:1008
+#: src/Admin/SettingsPage.php:1305
+msgid "days"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:863
+msgid "How long the estimate page linked from the confirmation e-mail stays reachable. After that, visitors see the contact fallback below."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:867
+msgid "Contact page URL"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:870
+msgid "Where the no-JavaScript fallback and expired share links send people. Leave empty to use a mailto: link to the brand contact e-mail."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:875
+msgid "Abuse protection"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:876
+msgid "Per-IP limits on the public endpoints. Defaults are generous for humans and tight for scripts."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:879
+msgid "Previews per hour"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:883
+msgid "Submissions per hour"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:887
+msgid "Minimum fill time"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:889
+#: src/Admin/SettingsPage.php:994
+msgid "seconds"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:890
+msgid "Submissions faster than this are rejected as bots (alongside the honeypot field)."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:905
+msgid "Current version"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:907
+msgid "Blended rate"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:912
+msgid "Every number the engine uses — hourly rates, base hours per service line, factor multipliers, urgency, spread and the qualification weights — lives on the Rate card page. It is versioned: each save keeps a history you can roll back to, and every lead records the version it was priced with."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:921
+msgid "Open the rate card"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:922
+msgid "Try it in the sandbox"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:937
+msgid "Narration"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:940
+#: src/Admin/SettingsPage.php:1362
+msgid "AI narration"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:942
+msgid "Enable AI narration"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:942
+msgid "Kill switch. When off — or when no key/model is set — every estimate uses the built-in fallback text and nothing is sent to a provider."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:946
+msgid "Provider"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:956
+msgid "API key"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:957
+msgid "Stored in the database, never printed. Leave the masked value untouched to keep the current key."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:964
+msgid "Refresh model list"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:965
+msgid "No model is preset on purpose: refresh the list and pick one. Prices shown are USD per 1M tokens."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:966
+msgid ":floor — route to the cheapest provider offering this model"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:968
+msgid "About free models"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:969
+msgid "Slugs ending in :free cost nothing but are rate-limited by the provider (roughly 20 requests/minute and 200/day) and can be withdrawn without notice. They are fine for a demo; production should use a paid slug — the budget guard below keeps the bill predictable."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:975
+msgid "Limits and budget"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:980
+msgid "per 1M tokens"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:981
+msgid "Ceiling passed to the provider router; 0 = no ceiling."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:985
+msgid "Max output tokens"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:988
+msgid "The narration is a few paragraphs; 700 is plenty and caps the cost of a runaway completion."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:992
+msgid "Timeout"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:995
+msgid "The visitor is never kept waiting longer than this; on timeout the fallback text is shown."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:999
+msgid "Monthly budget"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1001
+msgid "US cents"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1002
+msgid "Once this month's recorded spend reaches the budget, narration switches to fallback text until the 1st. 500 = $5.00; 0 = unlimited."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1006
+msgid "Cache narrations for"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1009
+msgid "Identical answer sets reuse the previous narration instead of paying for a new one. 0 disables the cache."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1054
+msgid "AI status"
+msgstr ""
+
+#. translators: %s: date/time
+#: src/Admin/SettingsPage.php:1070
+#, php-format
+msgid "Retries after %s."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1075
+msgid "Opens automatically after repeated provider failures."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1080
+msgid "Reset"
+msgstr ""
+
+#. translators: %s: month, e.g. 2026-08
+#: src/Admin/SettingsPage.php:1087
+#, php-format
+msgid "Spend %s"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1106
+msgid "Narration cache"
+msgstr ""
+
+#. translators: 1: hits, 2: misses
+#: src/Admin/SettingsPage.php:1110
+#, php-format
+msgid "%1$d hits / %2$d misses"
+msgstr ""
+
+#. translators: %d: percent
+#: src/Admin/SettingsPage.php:1117
+#, php-format
+msgid "%d%% served from cache"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1119
+msgid "No narrations requested yet."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1138
+msgid "Sales e-mail"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1141
+msgid "Receives the full breakdown for every new lead. Empty = the site admin e-mail."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1145
+msgid "Lead confirmation"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1146
+msgid "E-mail the visitor their estimate link"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1146
+msgid "The share link is the only way back to a gated estimate, so keep this on unless you follow up manually."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1154
+msgid "Test delivery"
+msgstr ""
+
+#. translators: %s: e-mail address
+#: src/Admin/SettingsPage.php:1158
+#, php-format
+msgid "Sends a short plain-text message to %s through wp_mail(), the same path the lead alerts use. Save the address first if you just changed it."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1161
+msgid "Send test e-mail"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1176
+msgid "Webhook URL"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1179
+msgid "Every new lead is POSTed here as JSON (asynchronously, 3 retries with backoff). https:// only — plain http:// is accepted just for 127.0.0.1 / localhost. Empty disables the webhook."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1183
+msgid "Shared secret"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1184
+msgid "Used to sign each request (X-CT-Signature: sha256=HMAC-SHA256 of the raw body). Empty = unsigned."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1192
+msgid "Test the webhook"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1193
+msgid "Sends a sample estimate.created payload (lead_id 0, \"test\": true) to the saved URL right now and shows the full exchange below."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1194
+msgid "Send test payload"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1199
+msgid "Verify the signature in n8n"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1200
+msgid "Put this in a Code (Function) node placed right after the Webhook node. Set the Webhook node to \"Raw Body\" so the exact bytes we signed are available, and keep the secret in an n8n credential or environment variable."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1229
+msgid "Request"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1235
+msgid "Response"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1241
+msgid "No response"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1249
+msgid "(empty body)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1303
+msgid "Keep leads for"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1306
+msgid "A daily job deletes leads older than this, contact details included. Won/lost status does not exempt a lead — export what you need to your CRM via the webhook."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1310
+msgid "Visitor IP"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1311
+msgid "Store a hashed IP address on each lead"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1311
+msgid "Only a salted SHA-256 hash is kept (the same one the rate limiter uses), so abuse from one address can be correlated without storing the address itself. Off by default."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1314
+msgid "Uninstall"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1315
+msgid "Delete all leads and settings when the plugin is uninstalled"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1315
+msgid "Deactivating never deletes anything; this only applies to \"Delete\" from the Plugins screen."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1323
+msgid "Data subject requests"
+msgstr ""
+
+#. translators: 1: link to Export Personal Data, 2: link to Erase Personal Data
+#: src/Admin/SettingsPage.php:1328
+#, php-format
+msgid "Leads are registered with the WordPress privacy tools: use %1$s and %2$s under Tools to answer access or erasure requests by e-mail address."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1329
+msgid "Export Personal Data"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1330
+msgid "Erase Personal Data"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1348
+msgid "Plugin version"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1349
+msgid "WordPress"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1350
+msgid "PHP"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1351
+msgid "Rate card version"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1352
+msgid "WP-Cron"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1352
+msgid "DISABLE_WP_CRON is set — make sure a system cron hits wp-cron.php"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1352
+msgid "Enabled (runs on page loads)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1353
+msgid "Retention job"
+msgstr ""
+
+#. translators: %s: date/time
+#: src/Admin/SettingsPage.php:1355
+#, php-format
+msgid "Next run %s"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1356
+msgid "Not scheduled"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1357
+msgid "Webhook queue"
+msgstr ""
+
+#. translators: %d: number of events
+#: src/Admin/SettingsPage.php:1359
+#, php-format
+msgid "%d pending delivery"
+msgid_plural "%d pending deliveries"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/SettingsPage.php:1362
+msgid "Enabled"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1362
+msgid "Disabled (fallback text)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1365
+msgid "Environment"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1375
+msgid "Recent log"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1376
+msgid "Clear log"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1380
+msgid "Demo data"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1384
+msgid "Seed a realistic set of leads to try the list, filters and share pages; remove them again with one click."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1386
+msgid "The demo seeder ships in Phase 5; these buttons will activate then."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1391
+msgid "Seed demo leads"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1392
+msgid "Remove demo leads"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1403
+msgid "Nothing logged yet."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1410
+msgid "Time"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1411
+msgid "Channel"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1412
+msgid "Message"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:1413
+msgid "Context"
+msgstr ""
+
+#: src/Ai/BudgetGuard.php:80
+msgid "[Estimator] AI narration budget reached — fallback text is now used"
+msgstr ""
+
+#. translators: 1: spent, 2: budget
+#: src/Ai/BudgetGuard.php:83
+#, php-format
+msgid "The AI narration budget for this month is used up (%1$s of %2$s). Visitors still receive complete estimates with the built-in narrative. Raise the budget under Estimator → Settings → AI to resume."
+msgstr ""
+
+#. translators: 1: service line label, 2: "N weeks", 3: "N roles"
+#: src/Ai/FallbackNarrative.php:35
+#, php-format
+msgid "Based on your answers, this %1$s project is scoped at about %2$s of work for a team of %3$s. The plan below is an indication built from your selections; we refine it together before any commitment."
+msgstr ""
+
+#. translators: %d: weeks
+#. translators: %d: number of weeks
+#: src/Ai/FallbackNarrative.php:38
+#: src/Frontend/RevealPolicy.php:47
+#: src/Frontend/SharePage.php:160
+#: templates/email/lead-confirmation.php:40
+#: templates/email/lead-confirmation.txt.php:21
+#: templates/email/sales-notification.php:35
+#: templates/email/sales-notification.txt.php:16
+#: templates/share/estimate.php:140
+#, php-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of roles
+#: src/Ai/FallbackNarrative.php:40
+#, php-format
+msgid "%d role"
+msgid_plural "%d roles"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: weeks
+#: src/Ai/FallbackNarrative.php:58
+#, php-format
+msgid "A %d-week course to a site your team can run itself"
+msgstr ""
+
+#. translators: %d: weeks
+#: src/Ai/FallbackNarrative.php:61
+#, php-format
+msgid "A %d-week route from first screen to the app stores"
+msgstr ""
+
+#. translators: %d: weeks
+#: src/Ai/FallbackNarrative.php:64
+#, php-format
+msgid "A %d-week design engagement, from research to handoff"
+msgstr ""
+
+#. translators: %d: weeks
+#: src/Ai/FallbackNarrative.php:67
+#, php-format
+msgid "A %d-week path to automations that work while you sleep"
+msgstr ""
+
+#. translators: %d: weeks
+#: src/Ai/FallbackNarrative.php:70
+#, php-format
+msgid "A %d-week plan for your project"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:84
+msgid "Discovery & design"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:84
+msgid "We align on goals, structure and visual direction, then sign off the page templates."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:85
+#: src/Ai/FallbackNarrative.php:91
+msgid "Build"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:85
+msgid "Templates, content model, integrations and admin experience are implemented and reviewed weekly."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:86
+msgid "QA & launch"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:86
+msgid "Cross-device testing, performance and accessibility checks, migration and go-live."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:87
+msgid "Handover"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:87
+msgid "Training, documentation and a stabilisation window after launch."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:90
+msgid "Discovery & UX"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:90
+msgid "User flows, screen inventory and technical spikes on the risky parts."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:91
+msgid "Cross-platform implementation with a testable build shipped every sprint."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:92
+msgid "QA & store submission"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:92
+msgid "Device matrix testing, store assets, review submission and fixes."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:93
+msgid "Launch & stabilisation"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:93
+msgid "Monitoring, crash triage and the first post-launch release."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:96
+msgid "Research & structure"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:96
+msgid "Stakeholder input, user needs and the information architecture."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:97
+msgid "Design"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:97
+msgid "Wireframes progress into hi-fi screens with the components documented as we go."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:98
+msgid "Validation & handoff"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:98
+msgid "Prototype reviews, testing rounds and a developer-ready handoff."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:101
+msgid "Discovery & data"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:101
+msgid "We map the processes, the systems involved and the data each workflow needs."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:102
+msgid "Build workflows"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:102
+msgid "Workflows are built and tested against real cases, with error paths and monitoring."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:103
+msgid "Pilot & rollout"
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:103
+msgid "Supervised pilot, tuning, then rollout with runbooks for your team."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:155
+msgid "You provide content, brand assets and timely feedback at each review."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:157
+msgid "Hosting and deployment infrastructure are provided by your team."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:159
+msgid "We set up hosting, deployment pipeline and monitoring as part of the project."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:162
+msgid "Existing content is exportable in a structured form for migration."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:165
+msgid "Your existing API is documented and reachable from a test environment."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:168
+msgid "API access to the systems to be integrated is available before the build starts."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:184
+msgid "A compressed timeline reduces room for scope changes; decisions need to be quick."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:187
+msgid "Third-party integrations depend on external APIs and their documentation quality."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:190
+msgid "App store review times are outside our control and can add days to launch."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:193
+msgid "Automation quality depends on the consistency of the source data."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:196
+msgid "Brand identity work benefits from early stakeholder alignment to avoid late rework."
+msgstr ""
+
+#: src/Ai/FallbackNarrative.php:199
+msgid "Scope details discovered during the first phase can shift the plan; we review it together at each milestone."
+msgstr ""
+
+#: src/Engine/Questionnaire.php:42
+msgid "What are we building?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:48
+#: src/Engine/RateCardDefaults.php:45
+msgid "Web solutions"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:48
+msgid "Websites, portals, e-commerce, custom web apps"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:49
+#: src/Engine/RateCardDefaults.php:50
+msgid "Mobile application"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:49
+msgid "iOS / Android apps with Flutter, Ionic or React Native"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:50
+#: src/Engine/RateCardDefaults.php:55
+msgid "UI/UX Design"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:50
+msgid "Research, wireframes, hi-fi design, prototypes, design systems"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:51
+#: src/Engine/RateCardDefaults.php:60
+msgid "AI Integration & Automation"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:51
+msgid "n8n workflows, LLM integrations, voice agents"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:59
+msgid "Scope"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:64
+msgid "Delivery context"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:70
+msgid "Flexible"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:70
+msgid "No fixed deadline"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:71
+msgid "Normal"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:71
+msgid "A realistic schedule"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:72
+msgid "Urgent"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:72
+msgid "We need to move fast"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:73
+msgid "ASAP"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:73
+msgid "Yesterday would be nice"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:78
+msgid "Urgency changes the team size and the price; it does not change the scope."
+msgstr ""
+
+#: src/Engine/Questionnaire.php:83
+msgid "Budget range"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:85
+msgid "Under €5,000"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:86
+msgid "€5,000 – €15,000"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:87
+msgid "€15,000 – €40,000"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:88
+msgid "€40,000 – €100,000"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:89
+msgid "Over €100,000"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:90
+msgid "Prefer not to say"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:95
+msgid "Optional. Helps us propose the right approach; it does not change the estimate."
+msgstr ""
+
+#: src/Engine/Questionnaire.php:98
+msgid "Do you want ongoing maintenance and support after launch?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:101
+msgid "Who owns hosting and DevOps?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:103
+msgid "We do"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:103
+msgid "You have infrastructure and people"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:104
+msgid "Cybertech should"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:104
+msgid "Set-up, deployment pipeline and monitoring"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:105
+msgid "Not decided yet"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:120
+msgid "Anything else?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:125
+msgid "Anything else we should know?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:126
+msgid "Optional. Goals, constraints, existing systems, examples you like."
+msgstr ""
+
+#: src/Engine/Questionnaire.php:134
+msgid "Where should we send the estimate?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:139
+msgid "Your name"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:147
+msgid "Work email"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:316
+msgid "Platform"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:322
+msgid "Custom build"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:322
+msgid "Next.js / Vue / Angular with a custom backend"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:338
+msgid "E-commerce"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:340
+msgid "No online sales"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:358
+msgid "Unique page templates"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:365
+msgid "Home, service page, article, contact… count the distinct layouts, not the pages."
+msgstr ""
+
+#: src/Engine/Questionnaire.php:368
+msgid "Multilingual?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:371
+msgid "Third-party integrations"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:378
+msgid "CRM, ERP, payment, newsletter, booking…"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:381
+msgid "Migrate content from an existing site?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:395
+msgid "Framework"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:414
+msgid "Platforms"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:418
+msgid "Both"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:427
+msgid "Offline support?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:428
+msgid "User accounts / authentication?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:429
+msgid "In-app payments?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:430
+msgid "Push notifications?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:433
+msgid "Backend"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:435
+msgid "We have an API"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:435
+msgid "Integrate with an existing backend"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:436
+msgid "Build one for us"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:437
+msgid "No backend needed"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:463
+msgid "Deliverables"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:469
+#: src/Engine/RateCardDefaults.php:215
+msgid "User research"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:474
+#: src/Engine/RateCardDefaults.php:216
+msgid "Wireframes"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:479
+#: src/Engine/RateCardDefaults.php:217
+msgid "Hi-fi design"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:484
+#: src/Engine/RateCardDefaults.php:218
+msgid "Interactive prototype"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:489
+#: src/Engine/RateCardDefaults.php:219
+msgid "Design system"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:495
+msgid "Number of screens"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:496
+msgid "Brand identity needed?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:497
+msgid "Usability testing rounds"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:509
+msgid "n8n workflows"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:512
+msgid "LLM provider preference"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:516
+#: src/Engine/RateCardDefaults.php:225
+msgid "Open-weight model"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:516
+msgid "Self-hosted, e.g. Llama / Mistral"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:517
+msgid "Undecided"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:529
+msgid "Voice agent (Vapi)?"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:532
+msgid "Systems to integrate"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:539
+msgid "CRM, helpdesk, ERP, e-mail, Slack…"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:544
+msgid "Data volume"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:546
+msgid "Small"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:546
+msgid "Hundreds of items a month"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:547
+msgid "Medium"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:547
+msgid "Thousands a month"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:548
+msgid "Large"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:548
+msgid "Tens of thousands or more"
+msgstr ""
+
+#: src/Engine/Questionnaire.php:560
+msgid "Human-in-the-loop review?"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:85
+msgid "Small engagement"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:90
+msgid "Mid-size engagement"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:95
+msgid "Enterprise engagement"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:192
+msgid "Platform: Drupal"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:192
+msgid "Heavier content model and module setup than WordPress."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:193
+msgid "Platform: Joomla"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:193
+msgid "Template and extension configuration."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:194
+msgid "Platform: Django CMS"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:194
+msgid "Custom models, admin and deployment."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:195
+msgid "Platform: custom build"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:195
+msgid "Own backend, auth, admin and infrastructure."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:196
+msgid "E-commerce: WooCommerce"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:196
+msgid "Catalogue, checkout, payments, shipping."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:197
+msgid "E-commerce: PrestaShop"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:197
+msgid "Catalogue, checkout, payments, shipping, theme."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:198
+msgid "E-commerce: Magento"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:198
+msgid "Magento multiplies everything: hosting, extensions, QA."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:199
+msgid "Per unique page template"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:199
+msgid "Design implementation + responsive QA per layout."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:200
+msgid "Multilingual"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:200
+msgid "Translation plumbing, content ops and per-language QA."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:201
+msgid "Per third-party integration"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:201
+msgid "API wiring, error handling, testing."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:202
+msgid "Content migration"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:202
+msgid "Export/import, clean-up, redirects."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:204
+msgid "Framework: Flutter"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:204
+msgid "Baseline. Framework choice barely moves cost — deliberately visible."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:205
+msgid "Framework: React Native"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:205
+msgid "Baseline."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:206
+msgid "Framework: Ionic"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:206
+msgid "Web-stack reuse shortens UI work."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:207
+msgid "Both iOS and Android"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:207
+msgid "Two store submissions, two QA matrices."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:208
+msgid "Offline support"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:208
+msgid "Local storage, sync, conflict handling."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:209
+msgid "Authentication"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:209
+msgid "Sign-up, login, recovery, sessions."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:210
+msgid "In-app payments"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:210
+msgid "PSP integration, store billing rules, PCI."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:211
+msgid "Push notifications"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:211
+msgid "FCM/APNs setup, topics, deep links."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:212
+msgid "Integrate existing backend"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:212
+msgid "API discovery and client wiring."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:213
+msgid "Build a backend"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:213
+msgid "API, database, auth, admin."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:215
+msgid "Interviews, synthesis, personas."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:216
+msgid "Low-fi flows and structure."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:217
+msgid "Visual design, states, handoff."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:218
+msgid "Clickable Figma prototype."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:219
+msgid "Tokens, components, documentation."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:220
+msgid "Per screen"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:220
+msgid "Average across simple and complex screens."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:221
+msgid "Brand identity"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:221
+msgid "Logo, palette, type, guidelines."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:222
+msgid "Per usability testing round"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:222
+msgid "Recruiting, sessions, iteration."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:224
+msgid "Per n8n workflow"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:224
+msgid "Design, build, error paths, monitoring."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:225
+msgid "Hosting, evaluation, prompt tuning."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:226
+msgid "Provider undecided"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:226
+msgid "Discovery and comparison."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:227
+msgid "Voice agent (Vapi)"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:227
+msgid "Telephony, prompts, hand-off, testing."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:228
+msgid "Per system integrated"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:228
+msgid "Credentials, mapping, retries."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:229
+msgid "Data volume: medium"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:229
+msgid "Batching, rate limits, cost controls."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:230
+msgid "Data volume: large"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:230
+msgid "Queues, observability, cost controls."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:231
+msgid "Human-in-the-loop review"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:231
+msgid "Review UI and audit trail."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:233
+msgid "Hosting & DevOps by Cybertech"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:233
+msgid "Environment setup, pipeline, monitoring."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:234
+msgid "Hosting undecided"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:234
+msgid "Infrastructure discovery."
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:412
+msgid "Project manager"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:413
+msgid "Senior software engineer"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:414
+msgid "Senior backend developer"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:415
+msgid "DevOps"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:416
+msgid "QA"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:417
+msgid "Junior frontend developer"
+msgstr ""
+
+#: src/Engine/RateCardDefaults.php:418
+msgid "Designer"
+msgstr ""
+
+#: src/Frontend/Assets.php:183
+#: src/Frontend/WizardRenderer.php:153
+msgid "Next"
+msgstr ""
+
+#: src/Frontend/Assets.php:184
+#: src/Frontend/WizardRenderer.php:152
+msgid "Back"
+msgstr ""
+
+#: src/Frontend/Assets.php:185
+msgid "Continue"
+msgstr ""
+
+#: src/Frontend/Assets.php:186
+#: src/Frontend/WizardRenderer.php:155
+msgid "Send me the full estimate"
+msgstr ""
+
+#: src/Frontend/Assets.php:187
+#: src/Frontend/WizardRenderer.php:155
+msgid "Reveal my estimate"
+msgstr ""
+
+#: src/Frontend/Assets.php:188
+msgid "Sending…"
+msgstr ""
+
+#: src/Frontend/Assets.php:189
+#: templates/wizard/result.php:44
+msgid "Calculating your estimate…"
+msgstr ""
+
+#: src/Frontend/Assets.php:190
+msgid "Loading…"
+msgstr ""
+
+#. translators: %s: estimate summary, e.g. "€9,750 – €14,500 · 9 weeks"
+#: src/Frontend/Assets.php:193
+#, php-format
+msgid "Current estimate: %s"
+msgstr ""
+
+#: src/Frontend/Assets.php:194
+msgid "Keep going — your estimate is revealed at the end."
+msgstr ""
+
+#: src/Frontend/Assets.php:195
+#: templates/share/estimate.php:87
+#: templates/wizard/result.php:48
+msgid "Indicative range"
+msgstr ""
+
+#: src/Frontend/Assets.php:198
+#: templates/share/estimate.php:90
+#: templates/wizard/result.php:52
+msgid "Budget band"
+msgstr ""
+
+#. translators: %d: hours
+#: src/Frontend/Assets.php:201
+#, php-format
+msgid "%d h"
+msgstr ""
+
+#. translators: 1: current step number, 2: total number of steps
+#: src/Frontend/Assets.php:203
+#, php-format
+msgid "Step %1$s of %2$s"
+msgstr ""
+
+#. translators: 1: characters used, 2: maximum characters
+#: src/Frontend/Assets.php:205
+#: src/Frontend/WizardRenderer.php:281
+#, php-format
+msgid "%1$s / %2$s characters"
+msgstr ""
+
+#: src/Frontend/Assets.php:207
+msgid "Copied!"
+msgstr ""
+
+#: src/Frontend/Assets.php:208
+msgid "Could not copy — select the link and copy it manually."
+msgstr ""
+
+#: src/Frontend/Assets.php:209
+msgid "Contact us directly"
+msgstr ""
+
+#: src/Frontend/Assets.php:210
+#: src/Security/InputSanitizer.php:70
+msgid "This field is required."
+msgstr ""
+
+#: src/Frontend/Assets.php:211
+msgid "Please choose one of the options."
+msgstr ""
+
+#: src/Frontend/Assets.php:212
+#: src/Security/InputSanitizer.php:121
+msgid "Please choose at least one option."
+msgstr ""
+
+#: src/Frontend/Assets.php:213
+msgid "Please enter a whole number."
+msgstr ""
+
+#. translators: %s: minimum value
+#: src/Frontend/Assets.php:215
+#, php-format
+msgid "Please enter %s or more."
+msgstr ""
+
+#. translators: %s: maximum value
+#: src/Frontend/Assets.php:217
+#, php-format
+msgid "Please enter %s or less."
+msgstr ""
+
+#. translators: %s: maximum characters
+#: src/Frontend/Assets.php:219
+#, php-format
+msgid "Please keep this under %s characters."
+msgstr ""
+
+#: src/Frontend/Assets.php:220
+#: src/Security/InputSanitizer.php:152
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: src/Frontend/Assets.php:221
+#: src/Security/InputSanitizer.php:75
+msgid "Please confirm you agree to be contacted about this estimate."
+msgstr ""
+
+#: src/Frontend/Assets.php:222
+#: src/Rest/SubmitController.php:96
+msgid "Please check the highlighted fields."
+msgstr ""
+
+#: src/Frontend/Assets.php:223
+msgid "Something went wrong on our side. Please try again in a moment."
+msgstr ""
+
+#: src/Frontend/Assets.php:224
+msgid "We could not reach the server. Check your connection and try again."
+msgstr ""
+
+#: src/Frontend/Assets.php:225
+#: src/Rest/PublicAccess.php:44
+msgid "You have reached the limit of estimates for now. Please try again in an hour or contact us directly."
+msgstr ""
+
+#: src/Frontend/Assets.php:226
+msgid "Live preview paused for now — you can still finish and receive your estimate."
+msgstr ""
+
+#: src/Frontend/Assets.php:228
+#: templates/wizard/result.php:91
+msgid "Shareable link to this estimate"
+msgstr ""
+
+#: src/Frontend/Assets.php:229
+msgid "Delivery phases"
+msgstr ""
+
+#: src/Frontend/Assets.php:231
+msgid "Risks to watch"
+msgstr ""
+
+#. translators: %s: number of weeks (abbreviated badge)
+#: src/Frontend/Assets.php:233
+#, php-format
+msgid "%s wk"
+msgstr ""
+
+#. translators: 1: first name, 2: company name
+#: src/Frontend/SharePage.php:291
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#. translators: 1: brand company name, 2: service line label
+#: src/Frontend/SharePage.php:338
+#, php-format
+msgid "Project estimate — %2$s · %1$s"
+msgstr ""
+
+#. translators: %s: brand company name
+#: src/Frontend/SharePage.php:345
+#, php-format
+msgid "Estimate unavailable · %s"
+msgstr ""
+
+#: src/Frontend/WizardRenderer.php:91
+msgid "The interactive estimator needs JavaScript to calculate a price. You can still reach us directly and we will prepare an estimate for you."
+msgstr ""
+
+#: src/Frontend/WizardRenderer.php:92
+msgid "Contact us"
+msgstr ""
+
+#: src/Frontend/WizardRenderer.php:146
+msgid "Website"
+msgstr ""
+
+#: src/Frontend/WizardRenderer.php:193
+#: src/Frontend/WizardRenderer.php:264
+#: src/Frontend/WizardRenderer.php:299
+msgid "(optional)"
+msgstr ""
+
+#: src/Integration/ElementorIntegration.php:48
+msgid "Cybertech"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:34
+msgid "Project Estimator"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:66
+#: src/Lead/LeadPostType.php:55
+msgid "Estimator"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:71
+msgid "Title"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:73
+msgid "Estimate my project"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:78
+msgid "Let the visitor choose"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:86
+msgid "Service line pre-filter"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:87
+msgid "Pre-selects the service line and skips the first step."
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:98
+msgid "Overrides Estimator → Settings → General for this placement."
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:101
+msgid "Use the plugin setting"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:102
+msgid "Open — figures shown immediately"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:103
+msgid "Band — engagement size only"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:104
+msgid "Gated — figures after contact details"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:115
+msgid "Style"
+msgstr ""
+
+#: src/Integration/ElementorWidget.php:122
+msgid "Accent colour"
+msgstr ""
+
+#. translators: 1: service line label, 2: price range, 3: qualification score
+#: src/Integration/MailNotifier.php:73
+#, php-format
+msgid "New estimate: %1$s, %2$s (score %3$d)"
+msgstr ""
+
+#. translators: %s: company name
+#: src/Integration/MailNotifier.php:93
+#, php-format
+msgid "Your project estimate from %s"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:29
+msgid "New"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:30
+msgid "Contacted"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:31
+msgid "Qualified"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:32
+msgid "Proposal sent"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:33
+msgid "Won"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:34
+msgid "Lost"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:53
+msgctxt "post type general name"
+msgid "Estimates"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:54
+msgctxt "post type singular name"
+msgid "Estimate"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:56
+msgid "Leads"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:58
+msgid "View lead"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:59
+msgid "Search leads"
+msgstr ""
+
+#: src/Lead/LeadPostType.php:60
+msgid "No leads yet. Seed demo data from Estimator → Settings → Diagnostics."
+msgstr ""
+
+#: src/Lead/LeadPostType.php:61
+msgid "No leads in the bin."
+msgstr ""
+
+#: src/Lead/LeadPostType.php:63
+msgid "Project estimate requests captured by the estimator wizard."
+msgstr ""
+
+#: src/Lead/LeadRepository.php:72
+msgid "Anonymous"
+msgstr ""
+
+#: src/Privacy/DataEraser.php:38
+#: src/Privacy/DataExporter.php:41
+#: src/Privacy/DataExporter.php:113
+msgid "Project estimates"
+msgstr ""
+
+#: src/Privacy/DataEraser.php:64
+msgid "Personal details were removed from the estimate requests; the anonymous estimate data (answers, hours, range) is retained for statistics."
+msgstr ""
+
+#. translators: %d: lead id
+#: src/Privacy/DataEraser.php:106
+#, php-format
+msgid "Anonymised estimate #%d"
+msgstr ""
+
+#: src/Privacy/DataExporter.php:65
+msgid "Requested on"
+msgstr ""
+
+#. translators: 1: company, 2: retention days
+#: src/Privacy/RetentionCron.php:94
+#, php-format
+msgid "When you use the project estimator, %1$s stores the answers you give, your name, email address, company and phone number (if provided), the free-text notes you enter, the calculated estimate, the consent text you agreed to and the time of your request. This data is used to prepare and follow up on your estimate. Personal details are removed automatically after %2$d days; the anonymous estimate data is kept for statistics. If AI narration is enabled, the answers and notes (never your contact details) are sent to the configured AI provider to generate a plain-language summary. No third-party CAPTCHA is used. You can request an export or erasure of your data at any time."
+msgstr ""
+
+#: src/Rest/NarrativeController.php:70
+#: src/Rest/NarrativeController.php:74
+msgid "This estimate could not be found."
+msgstr ""
+
+#: src/Rest/PreviewController.php:77
+msgid "Please choose a service line first."
+msgstr ""
+
+#: src/Rest/SubmitController.php:89
+msgid "We could not process this submission. Please try again or contact us directly."
+msgstr ""
+
+#: src/Rest/SubmitController.php:123
+msgid "Something went wrong on our side. Please try again or contact us directly."
+msgstr ""
+
+#: src/Security/InputSanitizer.php:39
+msgid "Unknown field."
+msgstr ""
+
+#: src/Security/InputSanitizer.php:101
+msgid "Please choose one of the listed options."
+msgstr ""
+
+#: src/Security/InputSanitizer.php:106
+#: src/Security/InputSanitizer.php:112
+msgid "Please choose from the listed options."
+msgstr ""
+
+#: src/Security/InputSanitizer.php:129
+msgid "Please enter a number."
+msgstr ""
+
+#: src/Security/InputSanitizer.php:137
+msgid "Invalid text."
+msgstr ""
+
+#. translators: %s: first name
+#: templates/email/lead-confirmation.php:28
+#: templates/email/lead-confirmation.txt.php:14
+#, php-format
+msgid "Thank you, %s."
+msgstr ""
+
+#. translators: 1: company name, 2: service line
+#: templates/email/lead-confirmation.php:29
+#: templates/email/lead-confirmation.txt.php:15
+#, php-format
+msgid "Here is your preliminary estimate from %1$s for a %2$s project. It is an indication based on your answers, not a quote — we will follow up shortly to refine it together."
+msgstr ""
+
+#: templates/email/lead-confirmation.php:34
+#: templates/email/lead-confirmation.txt.php:17
+msgid "Estimated range"
+msgstr ""
+
+#: templates/email/lead-confirmation.php:37
+#: templates/email/lead-confirmation.txt.php:19
+msgid "Engagement size"
+msgstr ""
+
+#: templates/email/lead-confirmation.php:40
+#: templates/email/lead-confirmation.txt.php:21
+msgid "Estimated duration"
+msgstr ""
+
+#: templates/email/lead-confirmation.php:44
+msgid "Your full estimate — timeline, team and assumptions — is available at this private link. Feel free to forward it to colleagues:"
+msgstr ""
+
+#. translators: %d: weeks
+#: templates/email/lead-confirmation.php:45
+#: templates/email/lead-confirmation.txt.php:22
+msgid "View your estimate"
+msgstr ""
+
+#: templates/email/sales-notification.php:30
+#: templates/email/sales-notification.txt.php:14
+msgid "New estimate request"
+msgstr ""
+
+#: templates/email/sales-notification.php:72
+#: templates/email/sales-notification.txt.php:34
+msgid "Open lead in WordPress"
+msgstr ""
+
+#: templates/email/sales-notification.php:73
+#: templates/email/sales-notification.txt.php:35
+msgid "Client share link"
+msgstr ""
+
+#. translators: %d: rate card version
+#: templates/email/sales-notification.php:75
+#, php-format
+msgid "Priced with rate card v%d. The lead stores a full snapshot; later rate-card changes do not affect it."
+msgstr ""
+
+#. translators: %s: service line label
+#: templates/share/estimate.php:26
+#, php-format
+msgid "Your %s estimate"
+msgstr ""
+
+#: templates/share/estimate.php:34
+#: templates/share/unavailable.php:37
+msgid "Skip to content"
+msgstr ""
+
+#: templates/share/estimate.php:45
+#: templates/share/unavailable.php:48
+msgid "Project estimate"
+msgstr ""
+
+#. translators: %s: recipient (first name and/or company)
+#: templates/share/estimate.php:53
+#, php-format
+msgid "Prepared for %s"
+msgstr ""
+
+#: templates/share/estimate.php:71
+msgid "Key figures"
+msgstr ""
+
+#. translators: %d: lead id
+#: templates/share/estimate.php:78
+#, php-format
+msgid "Ref #%d"
+msgstr ""
+
+#: templates/share/estimate.php:98
+msgid "week"
+msgid_plural "weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/share/estimate.php:105
+msgid "role"
+msgid_plural "roles"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/share/estimate.php:111
+msgid "Link copied"
+msgstr ""
+
+#: templates/share/estimate.php:111
+msgid "Copy failed — use the address bar"
+msgstr ""
+
+#: templates/share/estimate.php:115
+msgid "Print / Save as PDF"
+msgstr ""
+
+#: templates/share/estimate.php:150
+msgid "Roles involved"
+msgstr ""
+
+#. translators: 1: total hours, 2: number of roles
+#: templates/share/estimate.php:170
+#, php-format
+msgid "About %1$s hours of work across %2$d roles. Hours are indicative and shift as we refine scope together."
+msgstr ""
+
+#. translators: %s: hours
+#: templates/share/estimate.php:194
+#, php-format
+msgid "~%s h"
+msgstr ""
+
+#: templates/share/estimate.php:213
+msgid "What you told us"
+msgstr ""
+
+#: templates/share/estimate.php:227
+msgid "Assumptions and risks"
+msgstr ""
+
+#: templates/share/estimate.php:254
+msgid "Indicative estimate based on the answers provided; not a binding quote."
+msgstr ""
+
+#. translators: %s: expiry date
+#: templates/share/estimate.php:259
+#, php-format
+msgid "Valid until %s."
+msgstr ""
+
+#: templates/share/estimate.php:269
+msgid "Ready to dive in?"
+msgstr ""
+
+#. translators: %s: brand company name
+#: templates/share/estimate.php:274
+#, php-format
+msgid "Tell us where this lands and %s will turn it into a firm proposal."
+msgstr ""
+
+#: templates/share/estimate.php:281
+#: templates/share/unavailable.php:61
+msgid "Get in touch"
+msgstr ""
+
+#. translators: 1: lead id, 2: rate card version
+#: templates/share/estimate.php:307
+#, php-format
+msgid "Estimate ref #%1$d · rate card v%2$d"
+msgstr ""
+
+#: templates/share/unavailable.php:25
+msgid "This estimate link has expired"
+msgstr ""
+
+#: templates/share/unavailable.php:26
+msgid "Estimate links are valid for a limited time so that the figures you see are always current. Get in touch and we will send you a refreshed estimate."
+msgstr ""
+
+#: templates/share/unavailable.php:29
+msgid "This estimate is no longer available"
+msgstr ""
+
+#: templates/share/unavailable.php:30
+msgid "The link you followed has been switched off. If you still need the estimate, contact us and we will prepare a new one."
+msgstr ""
+
+#: templates/share/unavailable.php:33
+msgid "We could not find that estimate"
+msgstr ""
+
+#: templates/share/unavailable.php:34
+msgid "Check the link you were sent, or ask us to send it again. We are happy to prepare a fresh estimate as well."
+msgstr ""
+
+#: templates/share/unavailable.php:56
+msgid "What now?"
+msgstr ""
+
+#: templates/wizard/gate.php:34
+msgid "Enter your details to reveal your estimate"
+msgstr ""
+
+#: templates/wizard/gate.php:35
+msgid "Your indicative price range, timeline and team are ready. Tell us where to send them and we will unlock the full estimate right here."
+msgstr ""
+
+#: templates/wizard/gate.php:39
+msgid "Your details"
+msgstr ""
+
+#: templates/wizard/result.php:34
+msgid "Thank you. Here is your full estimate — we have also sent it to your inbox."
+msgstr ""
+
+#: templates/wizard/result.php:36
+msgid "Based on your answers, this is the budget band and timeline we would expect."
+msgstr ""
+
+#: templates/wizard/result.php:38
+msgid "Based on your answers, this is the indicative range and timeline we would expect."
+msgstr ""
+
+#: templates/wizard/result.php:65
+msgid "Effort"
+msgstr ""
+
+#: templates/wizard/result.php:80
+msgid "How we got here"
+msgstr ""
+
+#: templates/wizard/result.php:89
+msgid "Share this estimate"
+msgstr ""
+
+#: templates/wizard/result.php:99
+msgid "What happens next"
+msgstr ""
+
+#: templates/wizard/result.php:101
+msgid "We review your answers and the assumptions behind this estimate."
+msgstr ""
+
+#: templates/wizard/result.php:102
+msgid "Within two working days we get in touch to clarify scope and priorities."
+msgstr ""
+
+#: templates/wizard/result.php:103
+msgid "You receive a detailed proposal with a fixed price and delivery plan."
+msgstr ""
