@@ -127,7 +127,7 @@ final class RateCardSanitizer {
 				];
 			}
 			$out[ $line ] = $list;
-		}
+		}//end foreach
 		return $out;
 	}
 
@@ -214,7 +214,7 @@ final class RateCardSanitizer {
 	}
 
 	/**
-	 * key => number map (role rates, urgency multipliers).
+	 * Key => number map (role rates, urgency multipliers).
 	 *
 	 * @param mixed $raw Raw map.
 	 * @return array<string, int|float|null>
@@ -231,7 +231,7 @@ final class RateCardSanitizer {
 	}
 
 	/**
-	 * key => int map (qualification points).
+	 * Key => int map (qualification points).
 	 *
 	 * @param mixed $raw Raw map.
 	 * @return array<string, int>

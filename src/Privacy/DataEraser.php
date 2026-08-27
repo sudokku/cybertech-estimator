@@ -49,7 +49,8 @@ final class DataEraser {
 	 * @return array{items_removed: bool, items_retained: bool, messages: array<int, string>, done: bool}
 	 */
 	public function erase( string $email_address, int $page = 1 ): array {
-		// Page is always 1 after anonymisation removes the email match, so loop until empty.
+		unset( $page );
+		// Anonymising removes the email match, so every call restarts at page 1 until empty.
 		$leads   = DataExporter::leads_for_email( $email_address, 1 );
 		$removed = false;
 		foreach ( $leads as $lead_id ) {
